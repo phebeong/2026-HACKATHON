@@ -2,7 +2,18 @@
   "date": "2026-10-29",
   "presentation_rendered_and_inspected": true,
   "presentation_package_geometry_checks": "pass",
-  "docx_visual_rendering": "unavailable: LibreOffice missing",
+  "docx_visual_rendering": "Evaluation verified in Microsoft Word; four pages. Judge brief visual rendering remains unverified.",
   "docx_structure_and_accessibility": "checked separately; see local audit outputs",
-  "walkthrough": "118-second captioned evidence slides, no audio; not continuous screen recording"
+  "walkthrough": "118-second captioned evidence slides, no audio; not continuous screen recording",
+  "evaluation_template_fidelity": {
+    "reference": "https://www.gsa.gov/system/files/MCP-hackathon-sample-evaluation-document.docx",
+    "reference_sha256": "53104f7b8ee10f51f74977cde87b88e558aebd387b77f5ff2d91228dc9a8e62f",
+    "exact_heading_sequence": true,
+    "numbered_main_sections": 5,
+    "pages": 4,
+    "styles_numbering_margins_and_table_geometry_preserved": true,
+    "all_pages_visually_inspected": true,
+    "a11y_findings": 0,
+    "output_sha256": "030607f9b2011ac88fc7073bb0b1862a7f7bb44e46794da012873b15336fe1b9"
+  }
 }
