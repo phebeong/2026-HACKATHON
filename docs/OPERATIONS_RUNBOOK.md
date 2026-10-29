@@ -34,7 +34,7 @@ Use the task run ID from `tasks` when retrieving multi-task output. Inspect JUni
 Review differences and back up the workspace source. Keep `app.yaml` at its root; it starts the module with `src` on `PYTHONPATH`. `DATABRICKS_APP_PORT` selects HTTP.
 
 ```powershell
-databricks apps deploy 2026h --source-code-path /Workspace/Users/phebe.arouni@hq.dhs.gov/2026-HACKATHON --profile fema-hackathon
+databricks apps deploy 2026h --source-code-path /Workspace/Users/phebe.arouni@hq.dhs.gov/hackathon_releases/20261029 --profile fema-hackathon
 ```
 
 Check completed deployment, authenticated health and a real MCP call. Check the browser/model route separately; notebook tests do not certify it.
@@ -60,3 +60,5 @@ The October 29 deployment uses `/Workspace/Users/phebe.arouni@hq.dhs.gov/hackath
 Retain prior source/deployment IDs and failed evidence runs. Redeploy a reviewed prior snapshot through supported platform tooling. Do not delete unrelated resources or broaden permissions during recovery.
 
 Local pre-change backup: `C:/1 DHS/Raw/databricks-backup-20261026`. This is a recovery aid, not the final submission.
+
+Tested runtime direct dependencies: fastmcp==4.0.11, httpx==0.28.1, pydantic==2.13.5, pydantic-settings==2.15.0 and databricks-sdk==0.157.0. To prepare a new clean release, stage only src/, app.yaml and requirements.txt with these pins. Import those files as workspace files and deploy the staged release path. Keep evidence, Git metadata and submission archives outside it.
