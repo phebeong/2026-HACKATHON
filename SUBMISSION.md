@@ -16,7 +16,7 @@ A five-tool MCP server that turns public FEMA Public Assistance project records 
 
 | Item | Location |
 |---|---|
-| Repository recorded in workspace Git configuration | https://github.com/phebeong/2026-HACKATHON |
+| Published repository | https://github.com/phebeong/2026-HACKATHON |
 | Databricks prototype | https://2026h-7474654188777746.aws.databricksapps.com |
 | MCP endpoint | https://2026h-7474654188777746.aws.databricksapps.com/mcp |
 | Saved validation job | https://dbc-aae0ba16-8727.cloud.databricks.com/jobs/67919837469456?o=7474654188777746 |
@@ -58,3 +58,7 @@ On three archived exact-count questions repeated five times, registered tools ma
 ## Packet Status
 
 Included: revised deck, evaluation in Markdown/Word, an editable judge brief, design and security documents, reviewer instructions, rubric map, Q&A, submission copy, and raw evidence. A captioned evidence walkthrough accompanies the deck; see the recording status in presentation/RECORDING_KIT.md. Nothing has been submitted to the organizers by this task.
+
+## Verified Publication
+
+The reviewed source and packet were published in commit [f21fe97](https://github.com/phebeong/2026-HACKATHON/commit/f21fe978c49d45fdfd66aa39683b5d7ad92cda84). The published tree matches the tested release, including Python source SHA-256 f70d0a80f54a3e69113fca8755d305828d87263db9e882089b879c5307cd645c. Final organizer submission remains pending.

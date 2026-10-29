@@ -5,3 +5,5 @@ Completed: official-material review; source fixes; 64 passing local and Databric
 Final administrative checks: confirm approved judge access, registration/eligibility, any private organizer amendments and the final submission portal. No submission has been sent to organizers. The public page lists November 20, 2026, subject to change. No winning outcome can be guaranteed.
 
 Word visual rendering was unavailable because LibreOffice is missing. Structural and accessibility checks passed. The presentation was rendered and visually inspected. The walkthrough has no audio and is not a continuous live recording. Record a narrated live demo if an organizer-only instruction specifically requires one.
+
+GitHub publication confirmed: [f21fe97](https://github.com/phebeong/2026-HACKATHON/commit/f21fe978c49d45fdfd66aa39683b5d7ad92cda84). All 129 published files match the prepared release tree. The evaluated Python source hash is unchanged.
