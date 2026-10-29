@@ -9,11 +9,21 @@ from fastmcp import FastMCP
 from fema_oversight.utils import DATASET_PROVENANCE
 
 FIELD_DEFINITIONS = {
-    "federalShareObligated": "Federal PA funding available to the grantee. Typically 75% of total; some declarations authorized at 90%/100%.",
+    "federalShareObligated": (
+        "Federal PA funding available to the grantee. Typically 75% of total; "
+        "some declarations authorized at 90%/100%."
+    ),
     "totalObligated": "Federal share plus state and applicant administrative costs.",
-    "projectAmount": "Estimated total project cost from the damage survey, before admin costs.",
-    "damageCategoryCode": "Single-letter PA category of work. A-B emergency work; C-G permanent work.",
-    "mitigationAmount": "Section 406 hazard-mitigation portion. Can be negative due to adjustments; not an error.",
+    "projectAmount": (
+        "Estimated total project cost from the damage survey, before admin costs."
+    ),
+    "damageCategoryCode": (
+        "Single-letter PA category of work. A-B emergency work; C-G permanent work."
+    ),
+    "mitigationAmount": (
+        "Section 406 hazard-mitigation portion. Can be negative due to "
+        "adjustments; not an error."
+    ),
 }
 
 

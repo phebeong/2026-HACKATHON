@@ -1,48 +1,47 @@
-# Security Policy
+# Security Framework
 
-As a U.S. Government agency, the General Services Administration (GSA) takes seriously our responsibility to protect the public's information, including financial and personal information, from unwarranted disclosure.
+## System Boundary
 
-Software developed by the U.S. General Services Administration (GSA) is subject to the GSA Vulnerability Disclosure Policy.
+An authenticated Databricks sandbox retrieves public OpenFEMA records through approved tools. The tools cannot run model-generated SQL, mutate FEMA records, approve eligibility, open investigations or transfer funds. Tool annotations describe intent; platform permissions still matter.
 
-Please consult our policy for:
+The Databricks Apps gateway authenticates callers. The browser workflow uses the app's Databricks credentials at runtime for model access. Notebook evaluation uses its execution identity and in-process MCP; it does not require a new evaluation service principal. Credentials are not intentionally returned to the browser or written into evaluation artifacts.
 
-How to submit a report if you believe you have discovered a vulnerability.
-GSA's coordinated disclosure policy.
-Information on how you may conduct security research on GSA developed software and systems.
-Important legal and policy guidelines.
+## Threats and Controls
 
-## Supported Versions
+| Threat | Implemented control | Evidence | Residual risk |
+|---|---|---|---|
+| Arbitrary outbound destination / SSRF | Fixed FEMA origin, decoded path checks, no redirects or environment proxies | HTTP security tests | No independent penetration test |
+| Upstream error leaks | Sanitized HTTP/JSON errors | Tests inject sensitive strings and check returned/logged errors | Unexpected paths need review |
+| Large responses | 20,000,000-byte cap | `utils.fetch_json` implementation | Cap-specific test coverage is not claimed |
+| Invalid inputs | Pydantic contracts and range checks | Invalid state, amount, disaster, category and sigma tests | State format is not complete jurisdiction enumeration |
+| Non-finite numbers | NaN/infinity rejected | Numeric tests | Extreme finite values can distort statistics |
+| Mixed project identities | Disaster/applicant/worksheet filters; ambiguous matches rejected | Identity regression tests | Source identity/version quality remains external |
+| Cross-disaster repeat groups | Disaster in grouping key | Negative and positive fixture tests | No fuzzy matching or site linkage |
+| Browser cross-origin calls | Origin/host check on `/review` | Route test | Proxy/header trust, rate limiting and body handling need further review |
+| Model fabrication / injection | Fixed tools, bounded calls/turns, review-only instructions, visible evidence | Real traces and narrative review | Unsupported citations and framing errors were observed |
+| Excessive autonomy | Read-only inventory, no financial executor | Tool/code review | Human sign-off remains procedural |
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+## Review and Evidence
 
-| Version (Branch) | Supported          |
-| ------- | ------------------ |
-| main   | :white_check_mark: |
-| other  | :x:
+Analysts must verify declaration authority and project comparability. Evidence briefs do not independently confirm the trigger. 'Human review required' is an operating rule, not an enforced approval/signature workflow.
 
-## Security Researchers
+The reference bundle retains raw snapshots, SQL comparisons, JUnit/lint output, model calls, tool responses and hashes. MLflow stores the artifacts. This supports reviewability, not a tamper-proof regulatory audit trail. Workspace permissions and retention policies still apply.
 
-Security researchers shall:
+## Authentication and Data
 
-- Make every effort to avoid privacy violations, degradation of user experience, disruption to production systems, and destruction or manipulation of data.
-- Only use exploits to the extent necessary to confirm a vulnerability. Do not use an exploit to compromise or exfiltrate data, establish command line access and/or persistence, or use the exploit to "pivot" to other systems. Once you've established that a vulnerability exists, or encountered any of the sensitive data outlined above, you must stop your test and notify us immediately.
-- Keep confidential any information about discovered vulnerabilities for up to 90 calendar days after you have notified GSA. For details, please review Coordinated Disclosure.
+- Keep the prototype behind Databricks authentication. Do not make it public to simplify a demo.
+- Use OAuth for Databricks Apps. Browser login is not automatically an MCP client credential.
+- Never put tokens in source, notebooks, URLs, screenshots or submission ZIPs. Use supported secret storage where needed.
+- Public source data is not proof that every descriptive field is free of personal information. Retrieve only needed fields and do not add nonpublic applicant or investigative data.
+- Figures are for prototype analysis, not official financial reporting.
 
-## Hackathon note
+No agency ATO, FedRAMP applicability, FISMA compliance, legal compliance or production readiness is asserted. Arrange reviewer access through the organizers' approved process.
 
-MCP servers built from this template expose their `/mcp` endpoint **without authentication** by default (matching the public-data pilot posture). This is acceptable for a hackathon over public data. Before any non-hackathon use, front the endpoint with authentication and review your agency's ATO requirements. Never commit secrets — keep API keys in environment variables / `.env` (git-ignored), not in source.
+## Recovery
 
-The starter HTTP helper uses a fixed API origin, rejects absolute or escaping paths,
-disables redirects and environment proxies, and sanitizes upstream failures. Do not
-replace its relative path with a tool-supplied URL. If a tool must fetch arbitrary
-URLs, require exact destination allowlists, connection-time validation of every
-resolved IPv4/IPv6 address, validation at every redirect hop, credential stripping
-across origins, and network-level egress controls. A DNS lookup followed by a normal
-hostname request is vulnerable to DNS rebinding.
+Record the sanitized error, tool, source revision and run/deployment ID. Preserve failures. Redeploy a reviewed correction and rerun relevant checks; do not broaden permissions as a shortcut. See `docs/OPERATIONS_RUNBOOK.md`.
 
-Treat all tool arguments, retrieved content, and agent-to-agent messages as
-untrusted. Do not include upstream response bodies, headers, full URLs, query
-strings, stack traces, credentials, names, SSNs, dates of birth, addresses, or other
-sensitive values in MCP errors or logs. Use structured logs with explicitly
-allowlisted fields and define retention and access controls before processing PII.
+
+## October 29 controls
+
+The browser summary now uses a deterministic renderer over structured tool results and trusted methodology cards. Model-authored narrative and source-record titles are not copied into that summary. Regression cases cover hostile record prose, invented model citations, exact ratio boundaries, absent evidence and malformed upstream structures. Tool selection and arguments remain model-controlled; other MCP clients may narrate differently. This is not a universal prompt-injection defense. The app remains authenticated.

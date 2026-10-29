@@ -1,40 +1,17 @@
-# Demo video script — FEMA Evidence & Oversight Graph
+# Evidence walkthrough and live demo
 
-Target length: 2 minutes. Mirrors the kickoff's NIH demo: ask the same oversight question without the server (it fails), then with it (grounded, explained, caveated). Record your screen; talk over it.
+The October 29 captioned walkthrough is assembled from the revised deck and recorded project evidence. It is not a continuous live screen recording and has no spoken audio. The hosted demo is separately tested. Do not describe a plain model as having attempted web search: the baseline had no source tools or records and abstained.
 
----
+## Suggested spoken demo
 
-## 0:00-0:15 — The question
-On screen: your AI client, empty chat.
-Say: "An oversight question a FEMA analyst asks: which Florida Public Assistance projects deserve additional review, and why? Public Assistance is normally a 75% federal share, so anything well outside the expected pattern is worth a look. First, with no special tools."
+Open the hosted app and run the cost-share scenario. Point out the executed state/disaster filters, the 238 threshold indicators in this recorded cohort, and the full project identity in the evidence brief. Explain that a 100% share can be authorized and the tool does not verify authorization.
 
-## 0:15-0:45 — Without the server (the failure)
-On screen: ask it in a plain agent with only web search.
-Say: "With web search alone, the agent goes to the open web. But the FEMA Public Assistance data isn't on a scrapable page, it's behind an API. So it burns through sources and can't ground an answer. Nothing an analyst could act on."
+Run the Category C scenario for Florida disaster 4673. Show the three returned indicators and the category baseline. The independent SQL calculation matched those project identities on the same 179 input records.
 
-## 0:45-1:30 — With the MCP server (the win)
-On screen: switch to the client with the Evidence & Oversight Graph connected. Ask the identical question.
-Say: "Same question, now with the oversight server. The agent picks get_cost_share_anomalies, passes Florida, and runs a governed query against FEMA data in Unity Catalog. It comes back with review indicators, then calls generate_evidence_brief."
-Point at:
-- the tool names and parameters the agent chose
-- the flagged rows with federal_share_ratio
-- the evidence brief: source records, rationale, limitations, review status
-- the _provenance block on a row: source, last-updated, methodology, caveat
-Say: "Three things. It picked the right tool itself, because the tools are named for an agent. Every row carries its provenance. And every row says review indicator, not finding. The agent never accuses anyone; it points an analyst at what to check and hands over the evidence."
+Run the repeat scenario. Preserve the zero result. Zero groups in this bounded cohort do not establish that no issues exist elsewhere.
 
-## 1:30-1:50 — Why the design matters
-On screen: the directed oversight graph slide.
-Say: "Under the hood this is a directed graph. The agent runs the checks, then control leaves the agent: evidence validation, then a human analyst review, then the brief. Governed by Unity Catalog, every call audited, all read-only."
+Close by showing the saved validation evidence: 64 tests, three independent SQL comparisons and 15/15 first-tool selections. Explain the observed prose failure and the implemented evidence renderer. The analyst still checks filters, records and program context.
 
-## 1:50-2:00 — Close
-Say: "Trusted oversight at the speed of a question. Review indicators, never verdicts. Thanks for watching."
+## Recording limits
 
----
-
-## Prep checklist
-- [ ] Table loaded, recent-years filter, so queries are fast on camera
-- [ ] Both clients open: plain web-search agent, and the MCP-enabled one
-- [ ] A Florida query that returns a few flagged rows (test first)
-- [ ] Zoom the font up so tool calls and the provenance block are legible
-- [ ] Have the directed-graph slide ready to cut to at 1:30
-- [ ] One practice run to land under 2:00; trim the "without" section first if long
+Use only actual output. Do not claim Unity Catalog calculations, a signed human approval gate, fraud detection, measured savings, general answer accuracy, or browser performance based on notebook timings. If a continuous narrated demo is required by a private organizer instruction, record it against the tested authenticated app before final submission.

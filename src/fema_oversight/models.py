@@ -41,32 +41,54 @@ INDICATOR_METHODOLOGY: dict[str, dict[str, str]] = {
             "FEMA Public Assistance is normally a 75% federal share, but some "
             "declarations are authorized at 90% or 100% by law."
         ),
-        "calculation": "ratio = federalShareObligated / totalObligated; flag if ratio < low or ratio > high.",
-        "thresholds": "Default band 0.70-0.95; projects below a minimum total obligated are ignored to cut noise.",
-        "limitations": "Higher statutory shares are expected, not anomalies. Review required.",
+        "calculation": (
+            "ratio = federalShareObligated / totalObligated; flag if ratio < "
+            "low or ratio > high."
+        ),
+        "thresholds": (
+            "Default band 0.70-0.95; projects below a minimum total obligated "
+            "are ignored to cut noise."
+        ),
+        "limitations": (
+            "Higher statutory shares are expected, not anomalies. Review required."
+        ),
     },
     "repeated_worksheet": {
         "name": "Repeated / fragmentation pattern",
         "methodology": (
-            "Groups project worksheets by applicant, application title, and "
+            "Groups project worksheets by disaster, applicant, application title, and "
             "damage category; flags groups at or above a repeat threshold as a "
             "potential fragmentation or duplication pattern."
         ),
-        "calculation": "GROUP BY applicantId, applicationTitle, damageCategoryCode HAVING COUNT(*) >= min_repeat_count.",
+        "calculation": (
+            "GROUP BY disasterNumber, applicantId, applicationTitle, "
+            "damageCategoryCode HAVING COUNT(*) >= min_repeat_count."
+        ),
         "thresholds": "Default min_repeat_count = 2.",
-        "limitations": "Repeated titles are frequently legitimate (phased work, multiple sites). Review signal only.",
+        "limitations": (
+            "Repeated titles are frequently legitimate (phased work, multiple "
+            "sites). Review signal only."
+        ),
     },
     "category_outlier": {
         "name": "Within-category cost outlier",
         "methodology": (
             "Computes the mean and standard deviation of projectAmount within a "
             "damage category, then flags projects a set number of standard "
-            "deviations above the category mean. Outliers are measured relative "
-            "to declaration type, category of work, and peer projects."
+            "deviations above the category mean. The baseline uses only the "
+            "retrieved subset within the selected filters. Supply a disaster "
+            "filter for a declaration-specific baseline; declaration type, "
+            "project scale and geography are not otherwise matched."
         ),
-        "calculation": "sigma_above = (projectAmount - category_mean) / category_stddev; flag if >= sigma_threshold.",
+        "calculation": (
+            "sigma_above = (projectAmount - category_mean) / category_stddev; "
+            "flag if >= sigma_threshold."
+        ),
         "thresholds": "Default sigma_threshold = 3.0.",
-        "limitations": "Large, legitimate projects (major infrastructure) can be high outliers. Review required.",
+        "limitations": (
+            "Large, legitimate projects (major infrastructure) can be high "
+            "outliers. Review required."
+        ),
     },
 }
 
@@ -74,5 +96,7 @@ INDICATOR_METHODOLOGY: dict[str, dict[str, str]] = {
 class PaginationParams(BaseModel):
     """Reusable pagination inputs for list-style tools."""
 
-    limit: int = Field(default=25, ge=1, le=100, description="Max items to return (1-100).")
+    limit: int = Field(
+        default=25, ge=1, le=100, description="Max items to return (1-100)."
+    )
     offset: int = Field(default=0, ge=0, description="Items to skip from the start.")

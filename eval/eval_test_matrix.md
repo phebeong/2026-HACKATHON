@@ -1,71 +1,97 @@
-# Evaluation Test Matrix — FEMA Evidence & Oversight Graph (5 tools)
+# Executed Test Matrix
 
-Run each case against the loaded table (`workspace.default.funded_projects_details`, recent-years filter), compute the control value with a direct SQL query, then fill Actual and Pass. Do NOT pre-fill results; the numbers must come from your run.
+Reference: `20261026T064618Z`. These are recorded outcomes, not prefilled targets.
 
-Framing: every tool returns review indicators, not findings. A "pass" means the tool returned the statistically correct set cleanly and with its provenance block, not that any row is a confirmed problem.
+## Automated Cases
 
-## Tools under test
-Detection: `get_cost_share_anomalies`, `find_repeated_worksheets`, `detect_category_outliers`
-Explainability: `explain_risk_indicator`, `generate_evidence_brief`
+| # | Case | Result |
+|---|---|---|
+| 1 | `test_ambiguous_worksheet_is_rejected` | PASS |
+| 2 | `test_project_filters_are_applied` | PASS |
+| 3 | `test_validate_relative_path_rejects_destination_override[http://169.254.169.254/latest/meta-data]` | PASS |
+| 4 | `test_validate_relative_path_rejects_destination_override[https://localhost/admin]` | PASS |
+| 5 | `test_validate_relative_path_rejects_destination_override[//127.0.0.1/admin]` | PASS |
+| 6 | `test_validate_relative_path_rejects_destination_override[/absolute/path]` | PASS |
+| 7 | `test_validate_relative_path_rejects_destination_override[../admin]` | PASS |
+| 8 | `test_validate_relative_path_rejects_destination_override[datasets/../../admin]` | PASS |
+| 9 | `test_validate_relative_path_rejects_destination_override[%2e%2e/admin]` | PASS |
+| 10 | `test_validate_relative_path_rejects_destination_override[%252e%252e/admin]` | PASS |
+| 11 | `test_validate_relative_path_rejects_destination_override[%2f%2f127.0.0.1/admin]` | PASS |
+| 12 | `test_validate_relative_path_rejects_destination_override[datasets?target=http://127.0.0.1]` | PASS |
+| 13 | `test_validate_relative_path_rejects_destination_override[datasets#fragment]` | PASS |
+| 14 | `test_validate_relative_path_rejects_destination_override[\\\\127.0.0.1\\admin]` | PASS |
+| 15 | `test_validate_relative_path_rejects_destination_override[]` | PASS |
+| 16 | `test_validate_relative_path_accepts_expected_api_path` | PASS |
+| 17 | `test_fetch_json_uses_fixed_origin_and_safe_client_policy` | PASS |
+| 18 | `test_fetch_json_does_not_send_rejected_path` | PASS |
+| 19 | `test_upstream_error_does_not_expose_sensitive_response` | PASS |
+| 20 | `test_invalid_json_is_sanitized` | PASS |
+| 21 | `test_nonfinite_values_are_not_numbers[NaN]` | PASS |
+| 22 | `test_nonfinite_values_are_not_numbers[Infinity]` | PASS |
+| 23 | `test_nonfinite_values_are_not_numbers[-Infinity]` | PASS |
+| 24 | `test_nonfinite_values_are_not_numbers[None]` | PASS |
+| 25 | `test_nonfinite_values_are_not_numbers[]` | PASS |
+| 26 | `test_invalid_inputs_return_errors[get_cost_share_anomalies-args0]` | PASS |
+| 27 | `test_invalid_inputs_return_errors[get_cost_share_anomalies-args1]` | PASS |
+| 28 | `test_invalid_inputs_return_errors[get_cost_share_anomalies-args2]` | PASS |
+| 29 | `test_invalid_inputs_return_errors[get_cost_share_anomalies-args3]` | PASS |
+| 30 | `test_invalid_inputs_return_errors[get_cost_share_anomalies-args4]` | PASS |
+| 31 | `test_invalid_inputs_return_errors[find_repeated_worksheets-args5]` | PASS |
+| 32 | `test_invalid_inputs_return_errors[find_repeated_worksheets-args6]` | PASS |
+| 33 | `test_invalid_inputs_return_errors[find_repeated_worksheets-args7]` | PASS |
+| 34 | `test_invalid_inputs_return_errors[detect_category_outliers-args8]` | PASS |
+| 35 | `test_invalid_inputs_return_errors[detect_category_outliers-args9]` | PASS |
+| 36 | `test_invalid_inputs_return_errors[detect_category_outliers-args10]` | PASS |
+| 37 | `test_invalid_inputs_return_errors[generate_evidence_brief-args11]` | PASS |
+| 38 | `test_repeats_do_not_merge_disasters_and_keep_state_filter` | PASS |
+| 39 | `test_cost_share_ignores_nonfinite_and_ineligible_rows` | PASS |
+| 40 | `test_repeated_positive_group_exposes_evidence_identifiers` | PASS |
+| 41 | `test_server_is_importable` | PASS |
+| 42 | `test_server_has_name` | PASS |
+| 43 | `test_default_transport_is_stdio` | PASS |
+| 44 | `test_tools_register_without_error` | PASS |
+| 45 | `test_prompts_register_without_error` | PASS |
+| 46 | `test_resources_register_without_error` | PASS |
+| 47 | `test_routes_register_without_error` | PASS |
+| 48 | `test_all_five_tools_discoverable` | PASS |
+| 49 | `test_provenance_resource_registered` | PASS |
+| 50 | `test_browser_page_has_real_review_form` | PASS |
+| 51 | `test_cross_origin_review_is_rejected` | PASS |
+| 52 | `test_review_returns_actual_backend_result` | PASS |
 
-## 1. Detection — functional cases
+## Model First-Tool Cases
 
-| # | Tool | Input | Expected | Actual | Pass? |
-|---|------|-------|----------|--------|-------|
-| 1 | get_cost_share_anomalies | state=FL, band 0.70-0.95 | All rows outside band; matches control SQL | | |
-| 2 | get_cost_share_anomalies | state=TX, min_total_obligated=1,000,000 | Only >= $1M considered | | |
-| 3 | get_cost_share_anomalies | band 0.74-0.76 | Flags everything outside the tight band | | |
-| 4 | find_repeated_worksheets | state=LA, min_repeat_count=2 | Groups of >=2 same-title/category | | |
-| 5 | find_repeated_worksheets | disaster_number=4673, min_repeat_count=3 | Only groups of 3+ for that disaster | | |
-| 6 | detect_category_outliers | sigma_threshold=3.0 | All rows >=3 sigma above category mean | | |
-| 7 | detect_category_outliers | damage_category_code=C, sigma=2.0 | Only Cat C, >=2 sigma | | |
-| 8 | detect_category_outliers | state=FL, sigma=3.0 | FL-only outliers, descending by sigma | | |
+| # | Question | Expected | Selected | Result |
+|---|---|---|---|---|
+| 1 | Which Florida projects have federal shares outside the screening band? | `get_cost_share_anomalies` | `get_cost_share_anomalies` | PASS |
+| 2 | Screen Texas obligations above $100000 for unusual federal-share ratios. | `get_cost_share_anomalies` | `get_cost_share_anomalies` | PASS |
+| 3 | Check FL disaster 4734 cost share against a 0.70 to 0.95 band. | `get_cost_share_anomalies` | `get_cost_share_anomalies` | PASS |
+| 4 | Find repeated project titles for the same applicant in Florida disaster 4673. | `find_repeated_worksheets` | `find_repeated_worksheets` | PASS |
+| 5 | Look for potential fragmentation patterns in Louisiana worksheets. | `find_repeated_worksheets` | `find_repeated_worksheets` | PASS |
+| 6 | Find applicants with at least three matching worksheets in Texas. | `find_repeated_worksheets` | `find_repeated_worksheets` | PASS |
+| 7 | Which Florida Category C projects are at least three standard deviations above the mean? | `detect_category_outliers` | `detect_category_outliers` | PASS |
+| 8 | Screen Category G project costs in Texas for statistical outliers. | `detect_category_outliers` | `detect_category_outliers` | PASS |
+| 9 | Identify unusually large roads and bridges costs within Florida disaster 4673. | `detect_category_outliers` | `detect_category_outliers` | PASS |
+| 10 | Explain how the cost-share review indicator is calculated, including its limitations. | `explain_risk_indicator` | `explain_risk_indicator` | PASS |
+| 11 | Describe the methodology behind the repeated worksheet review indicator. | `explain_risk_indicator` | `explain_risk_indicator` | PASS |
+| 12 | Explain the category cost outlier formula and thresholds. | `explain_risk_indicator` | `explain_risk_indicator` | PASS |
+| 13 | Prepare an evidence brief for worksheet 169, disaster 4734, applicant 123-0BE2A-00, under cost_share_anomaly. | `generate_evidence_brief` | `generate_evidence_brief` | PASS |
+| 14 | Package source records and limitations for worksheet 169 in disaster 4734, applicant 123-0BE2A-00, for human cost-share review. | `generate_evidence_brief` | `generate_evidence_brief` | PASS |
+| 15 | Generate an analyst evidence brief, not a finding, for FL worksheet 169, disaster 4734, applicant 123-0BE2A-00, using cost_share_anomaly. | `generate_evidence_brief` | `generate_evidence_brief` | PASS |
 
-## 2. Detection — boundary / error cases
+## Other Checks
 
-| # | Tool | Input | Expected | Actual | Pass? |
-|---|------|-------|----------|--------|-------|
-| B1 | get_cost_share_anomalies | state="FLORIDA" | Rejected: 2-letter code only | | |
-| B2 | get_cost_share_anomalies | low=0.9, high=0.8 | Rejected: high < low | | |
-| B3 | get_cost_share_anomalies | state=ZZ | Valid format, empty set, no crash | | |
-| B4 | find_repeated_worksheets | min_repeat_count=1 | Rejected: ge=2 | | |
-| B5 | find_repeated_worksheets | disaster_number=-5 | Rejected: ge=1 | | |
-| B6 | detect_category_outliers | sigma_threshold=0.5 | Rejected: ge=1.0 | | |
-| B7 | detect_category_outliers | damage_category_code="AB" | Rejected: single letter | | |
+| Check | Outcome |
+|---|---|
+| pytest | PASS |
+| ruff | PASS |
+| cost_share_sqlite_control | PASS |
+| repeated_sqlite_control | PASS |
+| category_sqlite_control | PASS |
+| get_cost_share_anomalies_live | PASS |
+| find_repeated_worksheets_live | PASS |
+| detect_category_outliers_live | PASS |
+| explanation_schema | PASS |
+| evidence_identity | PASS |
 
-## 3. Explainability cases
-
-| # | Tool | Input | Expected | Actual | Pass? |
-|---|------|-------|----------|--------|-------|
-| E1 | explain_risk_indicator | cost_share_anomaly | Returns methodology, calculation, thresholds, limitations | | |
-| E2 | explain_risk_indicator | repeated_worksheet | Correct card, fragmentation framing | | |
-| E3 | explain_risk_indicator | category_outlier | Correct card, category-baseline framing | | |
-| E4 | generate_evidence_brief | pw_number=<real>, indicator=cost_share_anomaly | Brief has source records, rationale, limitations, not-a-finding status | | |
-
-## 4. Provenance / trust checks
-
-| # | Check | Expected | Actual | Pass? |
-|---|-------|----------|--------|-------|
-| P1 | Every detection row carries _provenance | Source, last_updated, methodology, limitations, review_status present | | |
-| P2 | Agent relays the review-only caveat | Answer states "not a finding" when presenting flags | | |
-| P3 | Dataset resource readable | fema-pa://provenance returns source + field defs | | |
-
-## 5. Agent-readability checks (FRED lesson)
-
-| # | Client | Check | Expected | Actual | Pass? |
-|---|--------|-------|----------|--------|-------|
-| R1 | [client A] | Agent selects the right tool for a plain-language oversight question | Correct tool | | |
-| R2 | [client A] | Agent credits FEMA as the source | Source cited | | |
-| R3 | [client B] | Same question, different client | Correct tool + citation | | |
-
-## 6. Performance (fill after run)
-
-| Tool | Median latency (ms) | Rows scanned | Pass rate |
-|------|--------------------|--------------|-----------|
-| get_cost_share_anomalies | | | |
-| find_repeated_worksheets | | | |
-| detect_category_outliers | | | |
-| explain_risk_indicator | | n/a (static card) | |
-| generate_evidence_brief | | | |
-
-Record table size (row count after the date filter) so latency has context.
+First-tool scoring does not score arguments or answers. Workflow completion is separate from narrative quality. See `NARRATIVE_QUALITY_REVIEW.md`. The full source snapshots and control membership sets remain in the reference folder.

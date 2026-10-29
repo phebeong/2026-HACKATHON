@@ -1,0 +1,287 @@
+[
+  {
+    "pass": true,
+    "started_at": "2026-10-29T11:19:04.176887+00:00",
+    "model": "databricks-claude-haiku-4-5",
+    "question": "Screen Florida disaster 4734 for cost-share review indicators. Show one project's evidence brief and explain why a 100% share does not establish wrongdoing. Include data limits.",
+    "tool_calls": [
+      {
+        "tool": "get_cost_share_anomalies",
+        "arguments": {
+          "state_code": "FL",
+          "disaster_number": 4734,
+          "pagination": {
+            "limit": 3,
+            "offset": 0
+          }
+        },
+        "result": {
+          "total": 238,
+          "count": 3,
+          "offset": 0,
+          "items": [
+            {
+              "pw_number": 169,
+              "applicant_id": "123-0BE2A-00",
+              "state": "FL",
+              "disaster_number": 4734,
+              "total_obligated": 975499.8,
+              "federal_share_obligated": 975499.8,
+              "federal_share_ratio": 1.0
+            },
+            {
+              "pw_number": 174,
+              "applicant_id": "123-0BE2A-00",
+              "state": "FL",
+              "disaster_number": 4734,
+              "total_obligated": 733157.78,
+              "federal_share_obligated": 733157.78,
+              "federal_share_ratio": 1.0
+            },
+            {
+              "pw_number": 193,
+              "applicant_id": "123-0BE2A-00",
+              "state": "FL",
+              "disaster_number": 4734,
+              "total_obligated": 843692.39,
+              "federal_share_obligated": 843692.39,
+              "federal_share_ratio": 1.0
+            }
+          ],
+          "has_more": true,
+          "next_offset": 3,
+          "data_scope": {
+            "records_retrieved": 238,
+            "record_cap": 5000,
+            "possibly_truncated": false
+          },
+          "policy_context": "Threshold screening only. Declaration-specific authorized shares are not verified; authorized 100% shares may be returned.",
+          "caveat": "Review indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.",
+          "_provenance": {
+            "source": "FEMA OpenFEMA Public Assistance Funded Projects Details (v2)",
+            "last_updated": "Source update timestamp not retrieved",
+            "update_frequency": "daily (R/P1D)",
+            "retrieved_at": "2026-10-29T11:19:05.754874+00:00",
+            "methodology": "federal_share_ratio = federalShareObligated / totalObligated; flagged outside [0.7, 0.95].",
+            "limitations": "Figures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting. Detection tools analyze at most 5,000 cost-share records or 10,000 repeated-worksheet/category records per call. Results and baselines describe the retrieved subset, not the full dataset. Cost-share bands do not verify declaration-specific authorizations; authorized 100% shares may be returned.",
+            "review_status": "Review indicator on public aggregate data. Not a finding."
+          }
+        }
+      },
+      {
+        "tool": "explain_risk_indicator",
+        "arguments": {
+          "indicator": "cost_share_anomaly"
+        },
+        "result": {
+          "name": "Cost-share anomaly",
+          "methodology": "Compares each project's federal share ratio (federalShareObligated / totalObligated) against an expected band. FEMA Public Assistance is normally a 75% federal share, but some declarations are authorized at 90% or 100% by law.",
+          "calculation": "ratio = federalShareObligated / totalObligated; flag if ratio < low or ratio > high.",
+          "thresholds": "Default band 0.70-0.95; projects below a minimum total obligated are ignored to cut noise.",
+          "limitations": "Higher statutory shares are expected, not anomalies. Review required."
+        }
+      },
+      {
+        "tool": "generate_evidence_brief",
+        "arguments": {
+          "pw_number": 169,
+          "disaster_number": 4734,
+          "applicant_id": "123-0BE2A-00",
+          "indicator": "cost_share_anomaly"
+        },
+        "result": {
+          "pw_number": 169,
+          "indicator": "cost_share_anomaly",
+          "indicator_name": "Cost-share anomaly",
+          "source_records": [
+            {
+              "pw_number": 169,
+              "applicant_id": "123-0BE2A-00",
+              "state": "FL",
+              "county": "Taylor County",
+              "disaster_number": 4734,
+              "application_title": "Taylor County Middle School Campus",
+              "damage_category": "Emergency Protective Measures",
+              "project_amount": 975499.8,
+              "total_obligated": 975499.8,
+              "federal_share_obligated": 975499.8,
+              "declaration_date": "2023-08-31T00:00:00.000Z"
+            }
+          ],
+          "rationale": "This Project Worksheet was submitted for Cost-share anomaly review. This brief does not independently verify that the indicator threshold was met. Review the source records below against program context before drawing any conclusion.",
+          "methodology": "Compares each project's federal share ratio (federalShareObligated / totalObligated) against an expected band. FEMA Public Assistance is normally a 75% federal share, but some declarations are authorized at 90% or 100% by law.",
+          "limitations": "Higher statutory shares are expected, not anomalies. Review required.",
+          "review_status": "Not a finding. Analyst review required.",
+          "caveat": "Review indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.",
+          "_provenance": {
+            "source": "FEMA OpenFEMA Public Assistance Funded Projects Details (v2)",
+            "last_updated": "Source update timestamp not retrieved",
+            "update_frequency": "daily (R/P1D)",
+            "retrieved_at": "2026-10-29T11:19:07.401543+00:00",
+            "methodology": "Compares each project's federal share ratio (federalShareObligated / totalObligated) against an expected band. FEMA Public Assistance is normally a 75% federal share, but some declarations are authorized at 90% or 100% by law.",
+            "limitations": "Figures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting. Detection tools analyze at most 5,000 cost-share records or 10,000 repeated-worksheet/category records per call. Results and baselines describe the retrieved subset, not the full dataset. Cost-share bands do not verify declaration-specific authorizations; authorized 100% shares may be returned.",
+            "review_status": "Review indicator on public aggregate data. Not a finding."
+          }
+        }
+      }
+    ],
+    "answer": "Evidence review\n\nReview indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.\n\nCost-share screening: 238 review indicators; 3 displayed. 238 source records retrieved; cap 5000.\n\nRule: federalShareObligated / totalObligated < 0.7 or > 0.95. Equality at either boundary is not flagged. Declaration-specific authorization has not been verified. A threshold flag does not establish an unauthorized share.\n\nRetrieved at: 2026-10-29T11:19:05.754874+00:00\n\nCost-share anomaly\n\nratio = federalShareObligated / totalObligated; flag if ratio < low or ratio > high.\n\nHigher statutory shares are expected, not anomalies. Review required.\n\nEvidence brief: 1 source records. Inspect the disaster, applicant and worksheet identifiers in the trace. The triggering threshold is not independently revalidated by this brief.\n\nRetrieved at: 2026-10-29T11:19:07.401543+00:00\n\nSource: https://www.fema.gov/openfema-data-page/public-assistance-funded-projects-details-v2\n\nFigures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting.\n\nCheck the executed parameters against your question. Output pagination does not retrieve additional source pages. Human review of source records and program authority remains required.",
+    "answer_mode": "deterministic_tool_evidence",
+    "elapsed_seconds": 9.845
+  },
+  {
+    "pass": true,
+    "started_at": "2026-10-29T11:19:14.023134+00:00",
+    "model": "databricks-claude-haiku-4-5",
+    "question": "Check Florida disaster 4673 Category C projects for cost outliers. Explain the source and limits.",
+    "tool_calls": [
+      {
+        "tool": "detect_category_outliers",
+        "arguments": {
+          "state_code": "FL",
+          "disaster_number": 4673,
+          "damage_category_code": "C",
+          "pagination": {
+            "limit": 25,
+            "offset": 0
+          }
+        },
+        "result": {
+          "total": 3,
+          "count": 3,
+          "offset": 0,
+          "items": [
+            {
+              "pw_number": 4902,
+              "applicant_id": "000-U03E9-00",
+              "state": "FL",
+              "disaster_number": 4673,
+              "damage_category_description": "Roads and Bridges",
+              "project_amount": 2993778.0,
+              "category_mean": 118985.63,
+              "sigma_above_mean": 9.71
+            },
+            {
+              "pw_number": 1921,
+              "applicant_id": "027-99027-00",
+              "state": "FL",
+              "disaster_number": 4673,
+              "damage_category_description": "Roads and Bridges",
+              "project_amount": 1682506.67,
+              "category_mean": 118985.63,
+              "sigma_above_mean": 5.28
+            },
+            {
+              "pw_number": 5476,
+              "applicant_id": "015-99015-00",
+              "state": "FL",
+              "disaster_number": 4673,
+              "damage_category_description": "Roads and Bridges",
+              "project_amount": 1548151.92,
+              "category_mean": 118985.63,
+              "sigma_above_mean": 4.82
+            }
+          ],
+          "has_more": false,
+          "next_offset": null,
+          "data_scope": {
+            "records_retrieved": 179,
+            "record_cap": 10000,
+            "possibly_truncated": false,
+            "disaster_filter": 4673,
+            "baseline": "retrieved projects in selected category and filters"
+          },
+          "category_stats": {
+            "mean": 118985.63,
+            "stddev": 296208.96,
+            "n": 179
+          },
+          "caveat": "Review indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.",
+          "_provenance": {
+            "source": "FEMA OpenFEMA Public Assistance Funded Projects Details (v2)",
+            "last_updated": "Source update timestamp not retrieved",
+            "update_frequency": "daily (R/P1D)",
+            "retrieved_at": "2026-10-29T11:19:15.444436+00:00",
+            "methodology": "sigma = (projectAmount - category_mean) / category_stddev within category C; flagged sigma >= 3.0.",
+            "limitations": "Figures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting. Detection tools analyze at most 5,000 cost-share records or 10,000 repeated-worksheet/category records per call. Results and baselines describe the retrieved subset, not the full dataset. Cost-share bands do not verify declaration-specific authorizations; authorized 100% shares may be returned.",
+            "review_status": "Review indicator on public aggregate data. Not a finding."
+          }
+        }
+      },
+      {
+        "tool": "explain_risk_indicator",
+        "arguments": {
+          "indicator": "category_outlier"
+        },
+        "result": {
+          "name": "Within-category cost outlier",
+          "methodology": "Computes the mean and standard deviation of projectAmount within a damage category, then flags projects a set number of standard deviations above the category mean. The baseline uses only the retrieved subset within the selected filters. Supply a disaster filter for a declaration-specific baseline; declaration type, project scale and geography are not otherwise matched.",
+          "calculation": "sigma_above = (projectAmount - category_mean) / category_stddev; flag if >= sigma_threshold.",
+          "thresholds": "Default sigma_threshold = 3.0.",
+          "limitations": "Large, legitimate projects (major infrastructure) can be high outliers. Review required."
+        }
+      }
+    ],
+    "answer": "Evidence review\n\nReview indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.\n\nCategory cost screening: 3 review indicators; 3 displayed. 179 source records retrieved; cap 10000.\n\nsigma_above = (projectAmount - category_mean) / category_stddev; flag if >= sigma_threshold.\n\nLarge, legitimate projects (major infrastructure) can be high outliers. Review required.\n\nRetrieved at: 2026-10-29T11:19:15.444436+00:00\n\nWithin-category cost outlier\n\nsigma_above = (projectAmount - category_mean) / category_stddev; flag if >= sigma_threshold.\n\nLarge, legitimate projects (major infrastructure) can be high outliers. Review required.\n\nSource: https://www.fema.gov/openfema-data-page/public-assistance-funded-projects-details-v2\n\nFigures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting.\n\nCheck the executed parameters against your question. Output pagination does not retrieve additional source pages. Human review of source records and program authority remains required.",
+    "answer_mode": "deterministic_tool_evidence",
+    "elapsed_seconds": 5.063
+  },
+  {
+    "pass": true,
+    "started_at": "2026-10-29T11:19:19.087688+00:00",
+    "model": "databricks-claude-haiku-4-5",
+    "question": "Find repeated worksheets in Florida disaster 4673. Explain why repeated titles may be legitimate.",
+    "tool_calls": [
+      {
+        "tool": "find_repeated_worksheets",
+        "arguments": {
+          "state_code": "FL",
+          "disaster_number": 4673,
+          "pagination": {
+            "limit": 25,
+            "offset": 0
+          }
+        },
+        "result": {
+          "total": 0,
+          "count": 0,
+          "offset": 0,
+          "items": [],
+          "has_more": false,
+          "next_offset": null,
+          "data_scope": {
+            "records_retrieved": 3962,
+            "record_cap": 10000,
+            "possibly_truncated": false
+          },
+          "caveat": "Review indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.",
+          "_provenance": {
+            "source": "FEMA OpenFEMA Public Assistance Funded Projects Details (v2)",
+            "last_updated": "Source update timestamp not retrieved",
+            "update_frequency": "daily (R/P1D)",
+            "retrieved_at": "2026-10-29T11:19:20.614585+00:00",
+            "methodology": "Grouped by disasterNumber, applicantId, applicationTitle, damageCategoryCode; flagged groups with count >= 2.",
+            "limitations": "Figures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting. Detection tools analyze at most 5,000 cost-share records or 10,000 repeated-worksheet/category records per call. Results and baselines describe the retrieved subset, not the full dataset. Cost-share bands do not verify declaration-specific authorizations; authorized 100% shares may be returned.",
+            "review_status": "Review indicator on public aggregate data. Not a finding."
+          }
+        }
+      },
+      {
+        "tool": "explain_risk_indicator",
+        "arguments": {
+          "indicator": "repeated_worksheet"
+        },
+        "result": {
+          "name": "Repeated / fragmentation pattern",
+          "methodology": "Groups project worksheets by disaster, applicant, application title, and damage category; flags groups at or above a repeat threshold as a potential fragmentation or duplication pattern.",
+          "calculation": "GROUP BY disasterNumber, applicantId, applicationTitle, damageCategoryCode HAVING COUNT(*) >= min_repeat_count.",
+          "thresholds": "Default min_repeat_count = 2.",
+          "limitations": "Repeated titles are frequently legitimate (phased work, multiple sites). Review signal only."
+        }
+      }
+    ],
+    "answer": "Evidence review\n\nReview indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.\n\nRepeated worksheet screening: 0 review indicators; 0 displayed. 3962 source records retrieved; cap 10000.\n\nGROUP BY disasterNumber, applicantId, applicationTitle, damageCategoryCode HAVING COUNT(*) >= min_repeat_count.\n\nRepeated titles are frequently legitimate (phased work, multiple sites). Review signal only.\n\nNo indicators returned for this retrieved subset and rule. This does not establish the absence of issues.\n\nRetrieved at: 2026-10-29T11:19:20.614585+00:00\n\nRepeated / fragmentation pattern\n\nGROUP BY disasterNumber, applicantId, applicationTitle, damageCategoryCode HAVING COUNT(*) >= min_repeat_count.\n\nRepeated titles are frequently legitimate (phased work, multiple sites). Review signal only.\n\nSource: https://www.fema.gov/openfema-data-page/public-assistance-funded-projects-details-v2\n\nFigures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting.\n\nCheck the executed parameters against your question. Output pagination does not retrieve additional source pages. Human review of source records and program authority remains required.",
+    "answer_mode": "deterministic_tool_evidence",
+    "elapsed_seconds": 4.24
+  }
+]

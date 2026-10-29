@@ -1,0 +1,1045 @@
+{
+  "get_cost_share_anomalies_0": {
+    "total": 238,
+    "count": 25,
+    "offset": 0,
+    "items": [
+      {
+        "pw_number": 169,
+        "applicant_id": "123-0BE2A-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 975499.8,
+        "federal_share_obligated": 975499.8,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 174,
+        "applicant_id": "123-0BE2A-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 733157.78,
+        "federal_share_obligated": 733157.78,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 193,
+        "applicant_id": "123-0BE2A-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 843692.39,
+        "federal_share_obligated": 843692.39,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 181,
+        "applicant_id": "123-0BE2A-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 492934.0,
+        "federal_share_obligated": 492934.0,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 191,
+        "applicant_id": "123-0BE2A-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 222982.28,
+        "federal_share_obligated": 222982.28,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 128,
+        "applicant_id": "115-125C7-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 119852.61,
+        "federal_share_obligated": 119852.61,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 760,
+        "applicant_id": "053-99053-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 193397.18,
+        "federal_share_obligated": 193397.18,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 807,
+        "applicant_id": "081-99081-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 580035.89,
+        "federal_share_obligated": 580035.89,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 591,
+        "applicant_id": "105-99105-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 124839.48,
+        "federal_share_obligated": 124839.48,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 731,
+        "applicant_id": "115-99115-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 215999.31,
+        "federal_share_obligated": 215999.31,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 256,
+        "applicant_id": "017-15775-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 430188.25,
+        "federal_share_obligated": 430188.25,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 324,
+        "applicant_id": "000-U03D9-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 177813.84,
+        "federal_share_obligated": 177813.84,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 7,
+        "applicant_id": "017-15775-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 517737.81,
+        "federal_share_obligated": 517737.81,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 170,
+        "applicant_id": "103-71150-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 149414.41,
+        "federal_share_obligated": 149414.41,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 719,
+        "applicant_id": "000-UK4RB-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 1749867.28,
+        "federal_share_obligated": 1749867.28,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 10,
+        "applicant_id": "023-99023-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 637863.05,
+        "federal_share_obligated": 637863.05,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 1084,
+        "applicant_id": "000-UR06H-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 1074779.33,
+        "federal_share_obligated": 1074779.33,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 805,
+        "applicant_id": "081-99081-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 3151967.82,
+        "federal_share_obligated": 3151967.82,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 486,
+        "applicant_id": "031-35000-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 307954.97,
+        "federal_share_obligated": 307954.97,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 152,
+        "applicant_id": "123-U3UYD-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 387314.03,
+        "federal_share_obligated": 387314.03,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 204,
+        "applicant_id": "029-UNZDM-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 208267.34,
+        "federal_share_obligated": 208267.34,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 699,
+        "applicant_id": "000-00427-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 295288.23,
+        "federal_share_obligated": 295288.23,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 1446,
+        "applicant_id": "017-15775-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 238597.5,
+        "federal_share_obligated": 238597.5,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 312,
+        "applicant_id": "081-07950-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 286521.35,
+        "federal_share_obligated": 286521.35,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 5,
+        "applicant_id": "075-11225-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 491729.17,
+        "federal_share_obligated": 491729.17,
+        "federal_share_ratio": 1.0
+      }
+    ],
+    "has_more": true,
+    "next_offset": 25,
+    "data_scope": {
+      "records_retrieved": 238,
+      "record_cap": 5000,
+      "possibly_truncated": false
+    },
+    "policy_context": "Threshold screening only. Declaration-specific authorized shares are not verified; authorized 100% shares may be returned.",
+    "caveat": "Review indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.",
+    "_provenance": {
+      "source": "FEMA OpenFEMA Public Assistance Funded Projects Details (v2)",
+      "last_updated": "Source update timestamp not retrieved",
+      "update_frequency": "daily (R/P1D)",
+      "retrieved_at": "2026-10-26T06:46:32.840173+00:00",
+      "methodology": "federal_share_ratio = federalShareObligated / totalObligated; flagged outside [0.7, 0.95].",
+      "limitations": "Figures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting. Detection tools analyze at most 5,000 cost-share records or 10,000 repeated-worksheet/category records per call. Results and baselines describe the retrieved subset, not the full dataset. Cost-share bands do not verify declaration-specific authorizations; authorized 100% shares may be returned.",
+      "review_status": "Review indicator on public aggregate data. Not a finding."
+    }
+  },
+  "get_cost_share_anomalies_1": {
+    "total": 238,
+    "count": 25,
+    "offset": 0,
+    "items": [
+      {
+        "pw_number": 169,
+        "applicant_id": "123-0BE2A-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 975499.8,
+        "federal_share_obligated": 975499.8,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 174,
+        "applicant_id": "123-0BE2A-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 733157.78,
+        "federal_share_obligated": 733157.78,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 193,
+        "applicant_id": "123-0BE2A-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 843692.39,
+        "federal_share_obligated": 843692.39,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 181,
+        "applicant_id": "123-0BE2A-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 492934.0,
+        "federal_share_obligated": 492934.0,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 191,
+        "applicant_id": "123-0BE2A-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 222982.28,
+        "federal_share_obligated": 222982.28,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 128,
+        "applicant_id": "115-125C7-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 119852.61,
+        "federal_share_obligated": 119852.61,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 760,
+        "applicant_id": "053-99053-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 193397.18,
+        "federal_share_obligated": 193397.18,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 807,
+        "applicant_id": "081-99081-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 580035.89,
+        "federal_share_obligated": 580035.89,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 591,
+        "applicant_id": "105-99105-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 124839.48,
+        "federal_share_obligated": 124839.48,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 731,
+        "applicant_id": "115-99115-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 215999.31,
+        "federal_share_obligated": 215999.31,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 256,
+        "applicant_id": "017-15775-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 430188.25,
+        "federal_share_obligated": 430188.25,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 324,
+        "applicant_id": "000-U03D9-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 177813.84,
+        "federal_share_obligated": 177813.84,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 7,
+        "applicant_id": "017-15775-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 517737.81,
+        "federal_share_obligated": 517737.81,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 170,
+        "applicant_id": "103-71150-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 149414.41,
+        "federal_share_obligated": 149414.41,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 719,
+        "applicant_id": "000-UK4RB-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 1749867.28,
+        "federal_share_obligated": 1749867.28,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 10,
+        "applicant_id": "023-99023-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 637863.05,
+        "federal_share_obligated": 637863.05,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 1084,
+        "applicant_id": "000-UR06H-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 1074779.33,
+        "federal_share_obligated": 1074779.33,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 805,
+        "applicant_id": "081-99081-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 3151967.82,
+        "federal_share_obligated": 3151967.82,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 486,
+        "applicant_id": "031-35000-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 307954.97,
+        "federal_share_obligated": 307954.97,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 152,
+        "applicant_id": "123-U3UYD-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 387314.03,
+        "federal_share_obligated": 387314.03,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 204,
+        "applicant_id": "029-UNZDM-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 208267.34,
+        "federal_share_obligated": 208267.34,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 699,
+        "applicant_id": "000-00427-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 295288.23,
+        "federal_share_obligated": 295288.23,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 1446,
+        "applicant_id": "017-15775-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 238597.5,
+        "federal_share_obligated": 238597.5,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 312,
+        "applicant_id": "081-07950-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 286521.35,
+        "federal_share_obligated": 286521.35,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 5,
+        "applicant_id": "075-11225-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 491729.17,
+        "federal_share_obligated": 491729.17,
+        "federal_share_ratio": 1.0
+      }
+    ],
+    "has_more": true,
+    "next_offset": 25,
+    "data_scope": {
+      "records_retrieved": 238,
+      "record_cap": 5000,
+      "possibly_truncated": false
+    },
+    "policy_context": "Threshold screening only. Declaration-specific authorized shares are not verified; authorized 100% shares may be returned.",
+    "caveat": "Review indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.",
+    "_provenance": {
+      "source": "FEMA OpenFEMA Public Assistance Funded Projects Details (v2)",
+      "last_updated": "Source update timestamp not retrieved",
+      "update_frequency": "daily (R/P1D)",
+      "retrieved_at": "2026-10-26T06:46:33.189727+00:00",
+      "methodology": "federal_share_ratio = federalShareObligated / totalObligated; flagged outside [0.7, 0.95].",
+      "limitations": "Figures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting. Detection tools analyze at most 5,000 cost-share records or 10,000 repeated-worksheet/category records per call. Results and baselines describe the retrieved subset, not the full dataset. Cost-share bands do not verify declaration-specific authorizations; authorized 100% shares may be returned.",
+      "review_status": "Review indicator on public aggregate data. Not a finding."
+    }
+  },
+  "get_cost_share_anomalies_2": {
+    "total": 238,
+    "count": 25,
+    "offset": 0,
+    "items": [
+      {
+        "pw_number": 169,
+        "applicant_id": "123-0BE2A-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 975499.8,
+        "federal_share_obligated": 975499.8,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 174,
+        "applicant_id": "123-0BE2A-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 733157.78,
+        "federal_share_obligated": 733157.78,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 193,
+        "applicant_id": "123-0BE2A-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 843692.39,
+        "federal_share_obligated": 843692.39,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 181,
+        "applicant_id": "123-0BE2A-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 492934.0,
+        "federal_share_obligated": 492934.0,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 191,
+        "applicant_id": "123-0BE2A-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 222982.28,
+        "federal_share_obligated": 222982.28,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 128,
+        "applicant_id": "115-125C7-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 119852.61,
+        "federal_share_obligated": 119852.61,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 760,
+        "applicant_id": "053-99053-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 193397.18,
+        "federal_share_obligated": 193397.18,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 807,
+        "applicant_id": "081-99081-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 580035.89,
+        "federal_share_obligated": 580035.89,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 591,
+        "applicant_id": "105-99105-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 124839.48,
+        "federal_share_obligated": 124839.48,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 731,
+        "applicant_id": "115-99115-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 215999.31,
+        "federal_share_obligated": 215999.31,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 256,
+        "applicant_id": "017-15775-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 430188.25,
+        "federal_share_obligated": 430188.25,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 324,
+        "applicant_id": "000-U03D9-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 177813.84,
+        "federal_share_obligated": 177813.84,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 7,
+        "applicant_id": "017-15775-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 517737.81,
+        "federal_share_obligated": 517737.81,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 170,
+        "applicant_id": "103-71150-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 149414.41,
+        "federal_share_obligated": 149414.41,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 719,
+        "applicant_id": "000-UK4RB-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 1749867.28,
+        "federal_share_obligated": 1749867.28,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 10,
+        "applicant_id": "023-99023-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 637863.05,
+        "federal_share_obligated": 637863.05,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 1084,
+        "applicant_id": "000-UR06H-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 1074779.33,
+        "federal_share_obligated": 1074779.33,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 805,
+        "applicant_id": "081-99081-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 3151967.82,
+        "federal_share_obligated": 3151967.82,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 486,
+        "applicant_id": "031-35000-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 307954.97,
+        "federal_share_obligated": 307954.97,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 152,
+        "applicant_id": "123-U3UYD-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 387314.03,
+        "federal_share_obligated": 387314.03,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 204,
+        "applicant_id": "029-UNZDM-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 208267.34,
+        "federal_share_obligated": 208267.34,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 699,
+        "applicant_id": "000-00427-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 295288.23,
+        "federal_share_obligated": 295288.23,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 1446,
+        "applicant_id": "017-15775-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 238597.5,
+        "federal_share_obligated": 238597.5,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 312,
+        "applicant_id": "081-07950-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 286521.35,
+        "federal_share_obligated": 286521.35,
+        "federal_share_ratio": 1.0
+      },
+      {
+        "pw_number": 5,
+        "applicant_id": "075-11225-00",
+        "state": "FL",
+        "disaster_number": 4734,
+        "total_obligated": 491729.17,
+        "federal_share_obligated": 491729.17,
+        "federal_share_ratio": 1.0
+      }
+    ],
+    "has_more": true,
+    "next_offset": 25,
+    "data_scope": {
+      "records_retrieved": 238,
+      "record_cap": 5000,
+      "possibly_truncated": false
+    },
+    "policy_context": "Threshold screening only. Declaration-specific authorized shares are not verified; authorized 100% shares may be returned.",
+    "caveat": "Review indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.",
+    "_provenance": {
+      "source": "FEMA OpenFEMA Public Assistance Funded Projects Details (v2)",
+      "last_updated": "Source update timestamp not retrieved",
+      "update_frequency": "daily (R/P1D)",
+      "retrieved_at": "2026-10-26T06:46:33.539351+00:00",
+      "methodology": "federal_share_ratio = federalShareObligated / totalObligated; flagged outside [0.7, 0.95].",
+      "limitations": "Figures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting. Detection tools analyze at most 5,000 cost-share records or 10,000 repeated-worksheet/category records per call. Results and baselines describe the retrieved subset, not the full dataset. Cost-share bands do not verify declaration-specific authorizations; authorized 100% shares may be returned.",
+      "review_status": "Review indicator on public aggregate data. Not a finding."
+    }
+  },
+  "find_repeated_worksheets_0": {
+    "total": 0,
+    "count": 0,
+    "offset": 0,
+    "items": [],
+    "has_more": false,
+    "next_offset": null,
+    "data_scope": {
+      "records_retrieved": 3956,
+      "record_cap": 10000,
+      "possibly_truncated": false
+    },
+    "caveat": "Review indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.",
+    "_provenance": {
+      "source": "FEMA OpenFEMA Public Assistance Funded Projects Details (v2)",
+      "last_updated": "Source update timestamp not retrieved",
+      "update_frequency": "daily (R/P1D)",
+      "retrieved_at": "2026-10-26T06:46:34.517801+00:00",
+      "methodology": "Grouped by disasterNumber, applicantId, applicationTitle, damageCategoryCode; flagged groups with count >= 2.",
+      "limitations": "Figures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting. Detection tools analyze at most 5,000 cost-share records or 10,000 repeated-worksheet/category records per call. Results and baselines describe the retrieved subset, not the full dataset. Cost-share bands do not verify declaration-specific authorizations; authorized 100% shares may be returned.",
+      "review_status": "Review indicator on public aggregate data. Not a finding."
+    }
+  },
+  "find_repeated_worksheets_1": {
+    "total": 0,
+    "count": 0,
+    "offset": 0,
+    "items": [],
+    "has_more": false,
+    "next_offset": null,
+    "data_scope": {
+      "records_retrieved": 3956,
+      "record_cap": 10000,
+      "possibly_truncated": false
+    },
+    "caveat": "Review indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.",
+    "_provenance": {
+      "source": "FEMA OpenFEMA Public Assistance Funded Projects Details (v2)",
+      "last_updated": "Source update timestamp not retrieved",
+      "update_frequency": "daily (R/P1D)",
+      "retrieved_at": "2026-10-26T06:46:34.918713+00:00",
+      "methodology": "Grouped by disasterNumber, applicantId, applicationTitle, damageCategoryCode; flagged groups with count >= 2.",
+      "limitations": "Figures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting. Detection tools analyze at most 5,000 cost-share records or 10,000 repeated-worksheet/category records per call. Results and baselines describe the retrieved subset, not the full dataset. Cost-share bands do not verify declaration-specific authorizations; authorized 100% shares may be returned.",
+      "review_status": "Review indicator on public aggregate data. Not a finding."
+    }
+  },
+  "find_repeated_worksheets_2": {
+    "total": 0,
+    "count": 0,
+    "offset": 0,
+    "items": [],
+    "has_more": false,
+    "next_offset": null,
+    "data_scope": {
+      "records_retrieved": 3956,
+      "record_cap": 10000,
+      "possibly_truncated": false
+    },
+    "caveat": "Review indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.",
+    "_provenance": {
+      "source": "FEMA OpenFEMA Public Assistance Funded Projects Details (v2)",
+      "last_updated": "Source update timestamp not retrieved",
+      "update_frequency": "daily (R/P1D)",
+      "retrieved_at": "2026-10-26T06:46:35.307191+00:00",
+      "methodology": "Grouped by disasterNumber, applicantId, applicationTitle, damageCategoryCode; flagged groups with count >= 2.",
+      "limitations": "Figures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting. Detection tools analyze at most 5,000 cost-share records or 10,000 repeated-worksheet/category records per call. Results and baselines describe the retrieved subset, not the full dataset. Cost-share bands do not verify declaration-specific authorizations; authorized 100% shares may be returned.",
+      "review_status": "Review indicator on public aggregate data. Not a finding."
+    }
+  },
+  "detect_category_outliers_0": {
+    "total": 3,
+    "count": 3,
+    "offset": 0,
+    "items": [
+      {
+        "pw_number": 4902,
+        "applicant_id": "000-U03E9-00",
+        "state": "FL",
+        "disaster_number": 4673,
+        "damage_category_description": "Roads and Bridges",
+        "project_amount": 2993778.0,
+        "category_mean": 118985.63,
+        "sigma_above_mean": 9.71
+      },
+      {
+        "pw_number": 1921,
+        "applicant_id": "027-99027-00",
+        "state": "FL",
+        "disaster_number": 4673,
+        "damage_category_description": "Roads and Bridges",
+        "project_amount": 1682506.67,
+        "category_mean": 118985.63,
+        "sigma_above_mean": 5.28
+      },
+      {
+        "pw_number": 5476,
+        "applicant_id": "015-99015-00",
+        "state": "FL",
+        "disaster_number": 4673,
+        "damage_category_description": "Roads and Bridges",
+        "project_amount": 1548151.92,
+        "category_mean": 118985.63,
+        "sigma_above_mean": 4.82
+      }
+    ],
+    "has_more": false,
+    "next_offset": null,
+    "data_scope": {
+      "records_retrieved": 179,
+      "record_cap": 10000,
+      "possibly_truncated": false,
+      "disaster_filter": 4673,
+      "baseline": "retrieved projects in selected category and filters"
+    },
+    "category_stats": {
+      "mean": 118985.63,
+      "stddev": 296208.96,
+      "n": 179
+    },
+    "caveat": "Review indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.",
+    "_provenance": {
+      "source": "FEMA OpenFEMA Public Assistance Funded Projects Details (v2)",
+      "last_updated": "Source update timestamp not retrieved",
+      "update_frequency": "daily (R/P1D)",
+      "retrieved_at": "2026-10-26T06:46:36.028183+00:00",
+      "methodology": "sigma = (projectAmount - category_mean) / category_stddev within category C; flagged sigma >= 3.0.",
+      "limitations": "Figures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting. Detection tools analyze at most 5,000 cost-share records or 10,000 repeated-worksheet/category records per call. Results and baselines describe the retrieved subset, not the full dataset. Cost-share bands do not verify declaration-specific authorizations; authorized 100% shares may be returned.",
+      "review_status": "Review indicator on public aggregate data. Not a finding."
+    }
+  },
+  "detect_category_outliers_1": {
+    "total": 3,
+    "count": 3,
+    "offset": 0,
+    "items": [
+      {
+        "pw_number": 4902,
+        "applicant_id": "000-U03E9-00",
+        "state": "FL",
+        "disaster_number": 4673,
+        "damage_category_description": "Roads and Bridges",
+        "project_amount": 2993778.0,
+        "category_mean": 118985.63,
+        "sigma_above_mean": 9.71
+      },
+      {
+        "pw_number": 1921,
+        "applicant_id": "027-99027-00",
+        "state": "FL",
+        "disaster_number": 4673,
+        "damage_category_description": "Roads and Bridges",
+        "project_amount": 1682506.67,
+        "category_mean": 118985.63,
+        "sigma_above_mean": 5.28
+      },
+      {
+        "pw_number": 5476,
+        "applicant_id": "015-99015-00",
+        "state": "FL",
+        "disaster_number": 4673,
+        "damage_category_description": "Roads and Bridges",
+        "project_amount": 1548151.92,
+        "category_mean": 118985.63,
+        "sigma_above_mean": 4.82
+      }
+    ],
+    "has_more": false,
+    "next_offset": null,
+    "data_scope": {
+      "records_retrieved": 179,
+      "record_cap": 10000,
+      "possibly_truncated": false,
+      "disaster_filter": 4673,
+      "baseline": "retrieved projects in selected category and filters"
+    },
+    "category_stats": {
+      "mean": 118985.63,
+      "stddev": 296208.96,
+      "n": 179
+    },
+    "caveat": "Review indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.",
+    "_provenance": {
+      "source": "FEMA OpenFEMA Public Assistance Funded Projects Details (v2)",
+      "last_updated": "Source update timestamp not retrieved",
+      "update_frequency": "daily (R/P1D)",
+      "retrieved_at": "2026-10-26T06:46:36.386270+00:00",
+      "methodology": "sigma = (projectAmount - category_mean) / category_stddev within category C; flagged sigma >= 3.0.",
+      "limitations": "Figures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting. Detection tools analyze at most 5,000 cost-share records or 10,000 repeated-worksheet/category records per call. Results and baselines describe the retrieved subset, not the full dataset. Cost-share bands do not verify declaration-specific authorizations; authorized 100% shares may be returned.",
+      "review_status": "Review indicator on public aggregate data. Not a finding."
+    }
+  },
+  "detect_category_outliers_2": {
+    "total": 3,
+    "count": 3,
+    "offset": 0,
+    "items": [
+      {
+        "pw_number": 4902,
+        "applicant_id": "000-U03E9-00",
+        "state": "FL",
+        "disaster_number": 4673,
+        "damage_category_description": "Roads and Bridges",
+        "project_amount": 2993778.0,
+        "category_mean": 118985.63,
+        "sigma_above_mean": 9.71
+      },
+      {
+        "pw_number": 1921,
+        "applicant_id": "027-99027-00",
+        "state": "FL",
+        "disaster_number": 4673,
+        "damage_category_description": "Roads and Bridges",
+        "project_amount": 1682506.67,
+        "category_mean": 118985.63,
+        "sigma_above_mean": 5.28
+      },
+      {
+        "pw_number": 5476,
+        "applicant_id": "015-99015-00",
+        "state": "FL",
+        "disaster_number": 4673,
+        "damage_category_description": "Roads and Bridges",
+        "project_amount": 1548151.92,
+        "category_mean": 118985.63,
+        "sigma_above_mean": 4.82
+      }
+    ],
+    "has_more": false,
+    "next_offset": null,
+    "data_scope": {
+      "records_retrieved": 179,
+      "record_cap": 10000,
+      "possibly_truncated": false,
+      "disaster_filter": 4673,
+      "baseline": "retrieved projects in selected category and filters"
+    },
+    "category_stats": {
+      "mean": 118985.63,
+      "stddev": 296208.96,
+      "n": 179
+    },
+    "caveat": "Review indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.",
+    "_provenance": {
+      "source": "FEMA OpenFEMA Public Assistance Funded Projects Details (v2)",
+      "last_updated": "Source update timestamp not retrieved",
+      "update_frequency": "daily (R/P1D)",
+      "retrieved_at": "2026-10-26T06:46:36.748472+00:00",
+      "methodology": "sigma = (projectAmount - category_mean) / category_stddev within category C; flagged sigma >= 3.0.",
+      "limitations": "Figures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting. Detection tools analyze at most 5,000 cost-share records or 10,000 repeated-worksheet/category records per call. Results and baselines describe the retrieved subset, not the full dataset. Cost-share bands do not verify declaration-specific authorizations; authorized 100% shares may be returned.",
+      "review_status": "Review indicator on public aggregate data. Not a finding."
+    }
+  },
+  "explain_risk_indicator": {
+    "name": "Cost-share anomaly",
+    "methodology": "Compares each project's federal share ratio (federalShareObligated / totalObligated) against an expected band. FEMA Public Assistance is normally a 75% federal share, but some declarations are authorized at 90% or 100% by law.",
+    "calculation": "ratio = federalShareObligated / totalObligated; flag if ratio < low or ratio > high.",
+    "thresholds": "Default band 0.70-0.95; projects below a minimum total obligated are ignored to cut noise.",
+    "limitations": "Higher statutory shares are expected, not anomalies. Review required."
+  },
+  "generate_evidence_brief": {
+    "pw_number": 169,
+    "indicator": "cost_share_anomaly",
+    "indicator_name": "Cost-share anomaly",
+    "source_records": [
+      {
+        "pw_number": 169,
+        "applicant_id": "123-0BE2A-00",
+        "state": "FL",
+        "county": "Taylor County",
+        "disaster_number": 4734,
+        "application_title": "Taylor County Middle School Campus",
+        "damage_category": "Emergency Protective Measures",
+        "project_amount": 975499.8,
+        "total_obligated": 975499.8,
+        "federal_share_obligated": 975499.8,
+        "declaration_date": "2023-08-31T00:00:00.000Z"
+      }
+    ],
+    "rationale": "This Project Worksheet was submitted for Cost-share anomaly review. This brief does not independently verify that the indicator threshold was met. Review the source records below against program context before drawing any conclusion.",
+    "methodology": "Compares each project's federal share ratio (federalShareObligated / totalObligated) against an expected band. FEMA Public Assistance is normally a 75% federal share, but some declarations are authorized at 90% or 100% by law.",
+    "limitations": "Higher statutory shares are expected, not anomalies. Review required.",
+    "review_status": "Not a finding. Analyst review required.",
+    "caveat": "Review indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.",
+    "_provenance": {
+      "source": "FEMA OpenFEMA Public Assistance Funded Projects Details (v2)",
+      "last_updated": "Source update timestamp not retrieved",
+      "update_frequency": "daily (R/P1D)",
+      "retrieved_at": "2026-10-26T06:46:37.376756+00:00",
+      "methodology": "Compares each project's federal share ratio (federalShareObligated / totalObligated) against an expected band. FEMA Public Assistance is normally a 75% federal share, but some declarations are authorized at 90% or 100% by law.",
+      "limitations": "Figures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting. Detection tools analyze at most 5,000 cost-share records or 10,000 repeated-worksheet/category records per call. Results and baselines describe the retrieved subset, not the full dataset. Cost-share bands do not verify declaration-specific authorizations; authorized 100% shares may be returned.",
+      "review_status": "Review indicator on public aggregate data. Not a finding."
+    }
+  }
+}

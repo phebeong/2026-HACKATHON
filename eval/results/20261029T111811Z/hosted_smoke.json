@@ -1,0 +1,26 @@
+{
+  "verified_at": "2026-10-29T11:47:13.331595+00:00",
+  "health_http": 200,
+  "tools": [
+    "get_cost_share_anomalies",
+    "find_repeated_worksheets",
+    "detect_category_outliers",
+    "explain_risk_indicator",
+    "generate_evidence_brief"
+  ],
+  "remote_mcp_explanation_pass": true,
+  "browser_cost_share_review": {
+    "observed": true,
+    "elapsed_seconds": 9.709,
+    "tool_calls": 3,
+    "indicators": 238,
+    "displayed": 3,
+    "brief_identity": [
+      4734,
+      "123-0BE2A-00",
+      169
+    ],
+    "evidence_summary_visible": true
+  },
+  "scope": "One authenticated remote MCP smoke test and one observed hosted browser review. No load or general reliability claim."
+}

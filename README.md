@@ -1,57 +1,73 @@
-# FEMA Evidence & Oversight Graph (MCP)
+# FEMA Evidence & Oversight Graph
 
-A FEMA Public Assistance Evidence & Oversight Graph that transforms open FEMA data into traceable, explainable, analyst-ready oversight intelligence. Built on the GSA MCP hackathon template (FastMCP + uv), deployable to Databricks Apps or IBM watsonx Orchestrate. Dataset Access track.
+Read-only MCP tools for reviewing public FEMA Public Assistance funded-project records. Indicators carry their method, source context and limits; a human decides what they mean.
 
-## Framing (read first)
+**Reviewers:** start with [SUBMISSION.md](SUBMISSION.md). The reference Databricks run has **64 passing tests, three exact control comparisons and 15/15 expected first-tool selections**. The displayed browser summary is assembled from tool evidence; 3/3 real review workflows passed. These narrow results do not establish general answer or filter accuracy. [Evaluation details](eval/evaluation_documentation.md).
 
-Every tool returns **review indicators on public aggregate data, not findings**. Nothing here detects, proves, or alleges fraud, waste, or abuse. Data is FEMA Grants Manager (FAC-Trax) data, not FEMA's official financial system, so it is not for official reporting. A human analyst makes every determination.
+## Five Tools
 
-## Five tools, two layers
+| Tool | Analyst goal | Important limit |
+|---|---|---|
+| `get_cost_share_anomalies` | Screen federal/total obligated ratios against a band | Band exceptions do not establish unauthorized cost share |
+| `find_repeated_worksheets` | Find same-disaster/applicant/title/category groups | Exact-title matching is not proof of duplicate scope |
+| `detect_category_outliers` | Compare amounts with a selected category baseline | Retrieved subset, not matched engineering costs |
+| `explain_risk_indicator` | Read the calculation, thresholds and limits | Static card, not policy adjudication |
+| `generate_evidence_brief` | Package selected project records | Supply full project identity; trigger is not independently revalidated |
 
-Detection (one file per tool under `src/fema_oversight/tools/`):
-- `get_cost_share_anomalies` - obligations whose federal share differs from the expected pattern for comparable declarations.
-- `find_repeated_worksheets` - potential fragmentation/duplication patterns across worksheets.
-- `detect_category_outliers` - projects that are cost outliers relative to declaration type, category of work, and peers.
+Also exposed: `fema-pa://provenance` and `fema_oversight_review`.
 
-Explainability:
-- `explain_risk_indicator` - the methodology, calculation, thresholds, and limitations behind an indicator.
-- `generate_evidence_brief` - source records, rationale, limitations, and review caveats for one Project Worksheet.
+## Architecture
 
-Plus an MCP **resource** (`fema-pa://provenance`) carrying dataset provenance and field definitions, and a **prompt** (`fema_oversight_review`) that frames a disciplined, review-only analyst pass.
-
-## Data
-
-OpenFEMA Public Assistance Funded Projects Details (v2): 849,167 obligated Project Worksheets, public, no API key, daily refresh. The tools call it through the template's hardened HTTP helper (fixed origin, relative-path validation, redirects and env proxies disabled, sanitized errors). Source: https://www.fema.gov/openfema-data-page/public-assistance-funded-projects-details-v2
-
-## Run it
-
-```bash
-cp .env.example .env
-uv sync
-uv run python main.py            # stdio for local clients
-uv sync --group dev
-uv run pytest tests/ -v          # smoke + security tests
-uv run ruff check .
+```mermaid
+flowchart LR
+  Q["Analyst question"] --> A["Bounded model tool selection"]
+  A --> T["Approved read-only MCP tools"]
+  T --> F["Public OpenFEMA API"]
+  T --> E["Records, method, source and limits"]
+  E --> H["Human analyst review"]
+  H --> B["Reviewed evidence brief"]
 ```
 
-HTTP mode (for cloud): `MCP_TRANSPORT=streamable-http uv run python main.py`, then `curl http://localhost:8000/health`.
+The graph is a review workflow. The code uses a bounded tool loop, not a separate graph orchestration framework. Human review is an operating requirement, not an electronic sign-off gate.
 
-## The directed oversight graph
+## Run Locally
 
-Analyst question -> retrieve FEMA records -> risk-analysis agent (the three detection tools) -> evidence validation -> human analyst review -> oversight brief. Agents surface indicators; control returns to a human at a governed checkpoint. See `presentation/` for the deck and the diagram.
+Python 3.11+ and `uv` are declared by the project. The reference run used Python 3.12.3.
 
-## Deploy
+```powershell
+uv sync --group dev
+uv run pytest tests/ -q
+uv run ruff check .
+$env:MCP_TRANSPORT = "streamable-http"
+$env:MCP_HOST = "127.0.0.1"
+uv run python main.py
+```
 
-`deploy/databricks/` (Databricks Apps) and `deploy/ibm/` (watsonx Orchestrate: local toolkit, Code Engine build-from-Git, prebuilt image). Both read the same server code; `app.py` serves HTTP when the platform injects a port.
+Health: `http://127.0.0.1:8000/health`; MCP: `http://127.0.0.1:8000/mcp`. Default transport is stdio. The browser agent uses Databricks model authentication and is intended for the hosted environment.
 
-## Evaluation
+## Databricks
 
-`eval/` holds the methodology, the test matrix for all five tools, and the OIG-audit-emulation targets. The metric numbers are TARGETS until you run the suite against your loaded data; only the predecessor 3-tool build has measured results (documented as early validation). Do not present targets as measured.
+- Source: `/Workspace/Users/phebe.arouni@hq.dhs.gov/2026-HACKATHON`.
+- App: `2026h`; MCP path `/mcp`; health path `/health`.
+- Notebook: `eval/databricks/HACKATHON_VALIDATION`.
+- On-demand job: `67919837469456`.
+- Reference evidence: `eval/results/20261029T111811Z/`.
+- MLflow experiment: `1305734463288268`.
 
-## Compliance alignment
+[Operations runbook](docs/OPERATIONS_RUNBOOK.md) covers deployment and reruns. No keys, secrets or bearer tokens belong in this repository.
 
-Supports EO 14249 (fraud/waste/abuse), EO 14395 (Task Force to Eliminate Fraud, SLTT programs), the OPEN Government Data Act, EO 13960 (trustworthy AI), and OMB M-25-21 / M-25-32. See `SOURCES.md`.
+## Source and Retrieval
 
-## License
+[OpenFEMA Public Assistance Funded Projects Details v2](https://www.fema.gov/openfema-data-page/public-assistance-funded-projects-details-v2) is queried through its public API. No hard-coded current dataset total is claimed. Records can change after retrieval.
 
-MIT (see `LICENSE`). US federal government works are public domain under 17 USC 105.
+Cost-share screening retrieves at most 5,000 records; repeat and category screening retrieve at most 10,000. `data_scope.possibly_truncated` warns when a cap is reached. Output pagination pages screened results; it does not fetch additional source pages.
+
+[Technical design](docs/TECHNICAL_DESIGN.md) | [Security](SECURITY.md) | [Known limits](docs/LIMITATIONS_AND_ROADMAP.md) | [Sources](SOURCES.md)
+
+## October 29 evidence
+
+The hosted browser completed a real cost-share review; authenticated health and a remote MCP methodology call passed. A small fixed-snapshot count comparison matched 15/15 tool results, while the model without source access abstained in all 15 trials. These are narrow checks, not general accuracy or load claims. Inspect `eval/results/20261029T111811Z/`.
+
+## Attribution
+
+The original Technology Transformation Services MIT license is retained in `LICENSE`. This does not imply agency endorsement, production authorization or compliance certification.

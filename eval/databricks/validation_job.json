@@ -1,0 +1,15 @@
+{
+  "name": "FEMA Hackathon - Recorded Validation",
+  "max_concurrent_runs": 1,
+  "timeout_seconds": 1800,
+  "tasks": [
+    {
+      "task_key": "recorded_validation",
+      "notebook_task": {
+        "notebook_path": "/Workspace/Users/phebe.arouni@hq.dhs.gov/2026-HACKATHON/eval/databricks/HACKATHON_VALIDATION",
+        "source": "WORKSPACE"
+      },
+      "timeout_seconds": 1800
+    }
+  ]
+}

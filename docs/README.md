@@ -1,37 +1,15 @@
-# Partner Reference Materials
+# Documentation Index
 
-This directory contains reference materials contributed by vendor partners for
-participants in the GSA MCP Hackathon. IBM and Databricks may submit materials
-through pull requests to help participants learn about and use their respective
-platforms during the event.
+| File | Audience / purpose |
+|---|---|
+| `JUDGE_BRIEF.md` | Short decision-oriented project overview |
+| `TECHNICAL_DESIGN.md` | Architecture, modules, analytical decisions and boundaries |
+| `REVIEWER_WALKTHROUGH.md` | Reproduction and demonstration scenarios |
+| `OPERATIONS_RUNBOOK.md` | Authentication, deployment, reruns and recovery |
+| `RUBRIC_EVIDENCE_MAP.md` | Judge criteria tied to reviewable evidence |
+| `JUDGE_QA.md` | Direct responses to likely technical and mission questions |
+| `LIMITATIONS_AND_ROADMAP.md` | Current gaps and next acceptance gates |
+| `SUBMISSION_COPY.md` | Copy-ready project description |
+| `SUBMISSION_CHECKLIST.md` | Packet contents and final administrative checks |
 
-Materials in this directory are provided for educational purposes only. They
-may be written and maintained by the contributing vendor, and they do not
-represent the views, positions, or policies of the General Services
-Administration (GSA) or the United States Government.
-
-## Non-Endorsement Disclaimer
-
-GSA does not endorse any commercial product, service, enterprise, or training
-participant referenced in these materials. Reference to any specific commercial
-product, service, or enterprise by trade name, trademark, manufacturer, or
-otherwise does not constitute or imply its endorsement, recommendation, or
-favoring by GSA or the United States Government.
-
-The inclusion of vendor-contributed materials in this repository does not imply
-that GSA or the United States Government has verified, approved, or adopted the
-materials or the products and services they describe.
-
-## Contributions
-
-Vendor partners should submit additions and updates through pull requests. Each
-contribution should:
-
-- Clearly identify the contributing organization.
-- Be relevant to hackathon participation and learning objectives.
-- Avoid including credentials, personal information, or other sensitive data.
-- Use relative links for files stored in this repository.
-- Remain educational in nature rather than promotional.
-
-Contributors are responsible for ensuring that they have the right to submit
-their materials and that the materials are accurate and appropriately licensed.
+Start at `../SUBMISSION.md`. Evaluation is in `../eval/evaluation_documentation.md`, with a separate narrative-quality review and raw reference artifacts. The captioned evidence walkthrough is in presentation/. It is not a continuous live screen recording.

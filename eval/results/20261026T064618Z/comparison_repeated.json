@@ -1,0 +1,36 @@
+{
+  "summary": {
+    "name": "repeated_sqlite_control",
+    "pass": true,
+    "snapshot_rows": 3956,
+    "tool_count": 0,
+    "control_count": 0,
+    "record_cap": 10000,
+    "possibly_truncated": false
+  },
+  "actual": [],
+  "expected": [],
+  "tool_response": {
+    "total": 0,
+    "count": 0,
+    "offset": 0,
+    "items": [],
+    "has_more": false,
+    "next_offset": null,
+    "data_scope": {
+      "records_retrieved": 3956,
+      "record_cap": 10000,
+      "possibly_truncated": false
+    },
+    "caveat": "Review indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.",
+    "_provenance": {
+      "source": "FEMA OpenFEMA Public Assistance Funded Projects Details (v2)",
+      "last_updated": "Source update timestamp not retrieved",
+      "update_frequency": "daily (R/P1D)",
+      "retrieved_at": "2026-10-26T06:46:31.303760+00:00",
+      "methodology": "Grouped by disasterNumber, applicantId, applicationTitle, damageCategoryCode; flagged groups with count >= 2.",
+      "limitations": "Figures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting. Detection tools analyze at most 5,000 cost-share records or 10,000 repeated-worksheet/category records per call. Results and baselines describe the retrieved subset, not the full dataset. Cost-share bands do not verify declaration-specific authorizations; authorized 100% shares may be returned.",
+      "review_status": "Review indicator on public aggregate data. Not a finding."
+    }
+  }
+}

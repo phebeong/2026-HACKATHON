@@ -1,0 +1,602 @@
+[
+  {
+    "question": "Which Florida projects have federal shares outside the screening band?",
+    "expected_tool": "get_cost_share_anomalies",
+    "response": {
+      "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "choices": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": "I'll search for Florida projects with federal cost-share ratios outside the expected screening band.",
+            "tool_calls": [
+              {
+                "id": "toolu_bdrk_01Wfz34f2pPV4nrbgkPaP3iV",
+                "type": "function",
+                "function": {
+                  "name": "get_cost_share_anomalies",
+                  "arguments": "{\"state_code\":\"FL\"}"
+                }
+              }
+            ]
+          },
+          "index": 0,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "cache_read_input_tokens": 0,
+        "completion_tokens": 81,
+        "prompt_tokens": 2194,
+        "total_tokens": 2275,
+        "cache_creation_input_tokens": 0
+      },
+      "object": "chat.completion",
+      "id": "msg_bdrk_tqk2vdhevrdl72pdvlxb2xuvfvmcfbk3tbh6budu2plpos2ko6wq",
+      "created": 1792997199
+    },
+    "selected_tool": "get_cost_share_anomalies",
+    "pass": true,
+    "latency_seconds": 1.062
+  },
+  {
+    "question": "Screen Texas obligations above $100000 for unusual federal-share ratios.",
+    "expected_tool": "get_cost_share_anomalies",
+    "response": {
+      "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "choices": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "toolu_bdrk_019858qKB3SqVSA73rMoogHc",
+                "type": "function",
+                "function": {
+                  "name": "get_cost_share_anomalies",
+                  "arguments": "{\"state_code\":\"TX\",\"min_total_obligated\":100000}"
+                }
+              }
+            ]
+          },
+          "index": 0,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "cache_read_input_tokens": 0,
+        "completion_tokens": 85,
+        "prompt_tokens": 2199,
+        "total_tokens": 2284,
+        "cache_creation_input_tokens": 0
+      },
+      "object": "chat.completion",
+      "id": "msg_bdrk_ctzxakvaqqhjv3wfze3xmk2r5ppt75lmje4erqimc5twbs34zexa",
+      "created": 1792997200
+    },
+    "selected_tool": "get_cost_share_anomalies",
+    "pass": true,
+    "latency_seconds": 0.884
+  },
+  {
+    "question": "Check FL disaster 4734 cost share against a 0.70 to 0.95 band.",
+    "expected_tool": "get_cost_share_anomalies",
+    "response": {
+      "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "choices": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "toolu_bdrk_01PvGT4DzeM8s2tD8DrAR3ou",
+                "type": "function",
+                "function": {
+                  "name": "get_cost_share_anomalies",
+                  "arguments": "{\"state_code\":\"FL\",\"disaster_number\":4734,\"band_low\":0.7,\"band_high\":0.95}"
+                }
+              }
+            ]
+          },
+          "index": 0,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "cache_read_input_tokens": 0,
+        "completion_tokens": 124,
+        "prompt_tokens": 2207,
+        "total_tokens": 2331,
+        "cache_creation_input_tokens": 0
+      },
+      "object": "chat.completion",
+      "id": "msg_bdrk_kp4brnac54kupz35rrob7yrg6qqcnarvg3mks3x4msczkkbwisaq",
+      "created": 1792997201
+    },
+    "selected_tool": "get_cost_share_anomalies",
+    "pass": true,
+    "latency_seconds": 1.061
+  },
+  {
+    "question": "Find repeated project titles for the same applicant in Florida disaster 4673.",
+    "expected_tool": "find_repeated_worksheets",
+    "response": {
+      "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "choices": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "toolu_bdrk_01W3M4gaiYWCj8tv1BH4vkCo",
+                "type": "function",
+                "function": {
+                  "name": "find_repeated_worksheets",
+                  "arguments": "{\"state_code\":\"FL\",\"disaster_number\":4673}"
+                }
+              }
+            ]
+          },
+          "index": 0,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "cache_read_input_tokens": 0,
+        "completion_tokens": 79,
+        "prompt_tokens": 2199,
+        "total_tokens": 2278,
+        "cache_creation_input_tokens": 0
+      },
+      "object": "chat.completion",
+      "id": "msg_bdrk_iglumlcj6tnsodislqduq5275ajn25bs5z57cfuzgw2u77cbxqaq",
+      "created": 1792997202
+    },
+    "selected_tool": "find_repeated_worksheets",
+    "pass": true,
+    "latency_seconds": 0.968
+  },
+  {
+    "question": "Look for potential fragmentation patterns in Louisiana worksheets.",
+    "expected_tool": "find_repeated_worksheets",
+    "response": {
+      "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "choices": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "toolu_bdrk_01Qw49zqwf5rF6Pc2bSHtSws",
+                "type": "function",
+                "function": {
+                  "name": "find_repeated_worksheets",
+                  "arguments": "{\"state_code\":\"LA\"}"
+                }
+              }
+            ]
+          },
+          "index": 0,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "cache_read_input_tokens": 0,
+        "completion_tokens": 59,
+        "prompt_tokens": 2194,
+        "total_tokens": 2253,
+        "cache_creation_input_tokens": 0
+      },
+      "object": "chat.completion",
+      "id": "msg_bdrk_zdajobkjkpaw6lomv4qf74hpvfpwhaye6g2ziafhidwr76oovdaq",
+      "created": 1792997203
+    },
+    "selected_tool": "find_repeated_worksheets",
+    "pass": true,
+    "latency_seconds": 0.857
+  },
+  {
+    "question": "Find applicants with at least three matching worksheets in Texas.",
+    "expected_tool": "find_repeated_worksheets",
+    "response": {
+      "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "choices": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "toolu_bdrk_01Dtw5s9XoPnHJsqVkN996XG",
+                "type": "function",
+                "function": {
+                  "name": "find_repeated_worksheets",
+                  "arguments": "{\"state_code\":\"TX\",\"min_repeat_count\":3}"
+                }
+              }
+            ]
+          },
+          "index": 0,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "cache_read_input_tokens": 0,
+        "completion_tokens": 80,
+        "prompt_tokens": 2196,
+        "total_tokens": 2276,
+        "cache_creation_input_tokens": 0
+      },
+      "object": "chat.completion",
+      "id": "msg_bdrk_qqn74pqvap7af3hn6ykzlp2cc36iliz2fkvn753sgovzfhlymgjq",
+      "created": 1792997204
+    },
+    "selected_tool": "find_repeated_worksheets",
+    "pass": true,
+    "latency_seconds": 0.886
+  },
+  {
+    "question": "Which Florida Category C projects are at least three standard deviations above the mean?",
+    "expected_tool": "detect_category_outliers",
+    "response": {
+      "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "choices": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "toolu_bdrk_01VyM173cdQCwzbbmhdQUJoV",
+                "type": "function",
+                "function": {
+                  "name": "detect_category_outliers",
+                  "arguments": "{\"damage_category_code\":\"C\",\"state_code\":\"FL\",\"sigma_threshold\":3.0}"
+                }
+              }
+            ]
+          },
+          "index": 0,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "cache_read_input_tokens": 0,
+        "completion_tokens": 101,
+        "prompt_tokens": 2200,
+        "total_tokens": 2301,
+        "cache_creation_input_tokens": 0
+      },
+      "object": "chat.completion",
+      "id": "msg_bdrk_hrnnvqibawscbiym2woqe24sdhpjuakny7nybdrczdmyybe7s4bq",
+      "created": 1792997205
+    },
+    "selected_tool": "detect_category_outliers",
+    "pass": true,
+    "latency_seconds": 1.049
+  },
+  {
+    "question": "Screen Category G project costs in Texas for statistical outliers.",
+    "expected_tool": "detect_category_outliers",
+    "response": {
+      "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "choices": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "toolu_bdrk_01TuomMhF9H34wp7maY4dB46",
+                "type": "function",
+                "function": {
+                  "name": "detect_category_outliers",
+                  "arguments": "{\"damage_category_code\":\"G\",\"state_code\":\"TX\"}"
+                }
+              }
+            ]
+          },
+          "index": 0,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "cache_read_input_tokens": 0,
+        "completion_tokens": 80,
+        "prompt_tokens": 2195,
+        "total_tokens": 2275,
+        "cache_creation_input_tokens": 0
+      },
+      "object": "chat.completion",
+      "id": "msg_bdrk_5kvxqqzmz4z2w5zgjvvcpxqnyrdzbxoeuldea5pctbk4h3ohj6xq",
+      "created": 1792997206
+    },
+    "selected_tool": "detect_category_outliers",
+    "pass": true,
+    "latency_seconds": 0.961
+  },
+  {
+    "question": "Identify unusually large roads and bridges costs within Florida disaster 4673.",
+    "expected_tool": "detect_category_outliers",
+    "response": {
+      "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "choices": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": "I'll search for unusually large projects in the roads and bridges category (Category C) within Florida disaster 4673.",
+            "tool_calls": [
+              {
+                "id": "toolu_bdrk_01SK1coBRdK7gxVe3EMDSkJb",
+                "type": "function",
+                "function": {
+                  "name": "detect_category_outliers",
+                  "arguments": "{\"damage_category_code\":\"C\",\"disaster_number\":4673,\"state_code\":\"FL\"}"
+                }
+              }
+            ]
+          },
+          "index": 0,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "cache_read_input_tokens": 0,
+        "completion_tokens": 125,
+        "prompt_tokens": 2199,
+        "total_tokens": 2324,
+        "cache_creation_input_tokens": 0
+      },
+      "object": "chat.completion",
+      "id": "msg_bdrk_syghpgcgukr3tezt6zh7t7fjeg77z6xztdfesshektm2zxqtz6wq",
+      "created": 1792997207
+    },
+    "selected_tool": "detect_category_outliers",
+    "pass": true,
+    "latency_seconds": 1.24
+  },
+  {
+    "question": "Explain how the cost-share review indicator is calculated, including its limitations.",
+    "expected_tool": "explain_risk_indicator",
+    "response": {
+      "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "choices": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "toolu_bdrk_01A4wSwAU55LAFb8t2pA6PmN",
+                "type": "function",
+                "function": {
+                  "name": "explain_risk_indicator",
+                  "arguments": "{\"indicator\":\"cost_share_anomaly\"}"
+                }
+              }
+            ]
+          },
+          "index": 0,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "cache_read_input_tokens": 0,
+        "completion_tokens": 61,
+        "prompt_tokens": 2199,
+        "total_tokens": 2260,
+        "cache_creation_input_tokens": 0
+      },
+      "object": "chat.completion",
+      "id": "msg_bdrk_ahcwzxfnmqbscq3vosqk7uzkmex3vodmewpfky7w3qd3mpcimuba",
+      "created": 1792997208
+    },
+    "selected_tool": "explain_risk_indicator",
+    "pass": true,
+    "latency_seconds": 0.854
+  },
+  {
+    "question": "Describe the methodology behind the repeated worksheet review indicator.",
+    "expected_tool": "explain_risk_indicator",
+    "response": {
+      "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "choices": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "toolu_bdrk_016ofDdyqvwcjoTYPcqYdLZK",
+                "type": "function",
+                "function": {
+                  "name": "explain_risk_indicator",
+                  "arguments": "{\"indicator\":\"repeated_worksheet\"}"
+                }
+              }
+            ]
+          },
+          "index": 0,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "cache_read_input_tokens": 0,
+        "completion_tokens": 58,
+        "prompt_tokens": 2194,
+        "total_tokens": 2252,
+        "cache_creation_input_tokens": 0
+      },
+      "object": "chat.completion",
+      "id": "msg_bdrk_mx2akqkw4r235o5fp4wwcgfxv3k6tlecvekcw5wl2dro5glzmfcq",
+      "created": 1792997209
+    },
+    "selected_tool": "explain_risk_indicator",
+    "pass": true,
+    "latency_seconds": 0.783
+  },
+  {
+    "question": "Explain the category cost outlier formula and thresholds.",
+    "expected_tool": "explain_risk_indicator",
+    "response": {
+      "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "choices": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "toolu_bdrk_01RuVp7ydfyAux4gEDY6BQYC",
+                "type": "function",
+                "function": {
+                  "name": "explain_risk_indicator",
+                  "arguments": "{\"indicator\":\"category_outlier\"}"
+                }
+              }
+            ]
+          },
+          "index": 0,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "cache_read_input_tokens": 0,
+        "completion_tokens": 59,
+        "prompt_tokens": 2196,
+        "total_tokens": 2255,
+        "cache_creation_input_tokens": 0
+      },
+      "object": "chat.completion",
+      "id": "msg_bdrk_tk3q7z4uuvyibpqxwm3iqqqvdqh4lyufnfhe344s3u7wqjnvgzya",
+      "created": 1792997210
+    },
+    "selected_tool": "explain_risk_indicator",
+    "pass": true,
+    "latency_seconds": 0.814
+  },
+  {
+    "question": "Prepare an evidence brief for worksheet 169, disaster 4734, applicant 123-0BE2A-00, under cost_share_anomaly.",
+    "expected_tool": "generate_evidence_brief",
+    "response": {
+      "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "choices": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "toolu_bdrk_01LPaju52ikzbhuXwUPbi4jg",
+                "type": "function",
+                "function": {
+                  "name": "generate_evidence_brief",
+                  "arguments": "{\"pw_number\":169,\"disaster_number\":4734,\"applicant_id\":\"123-0BE2A-00\",\"indicator\":\"cost_share_anomaly\"}"
+                }
+              }
+            ]
+          },
+          "index": 0,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "cache_read_input_tokens": 0,
+        "completion_tokens": 127,
+        "prompt_tokens": 2218,
+        "total_tokens": 2345,
+        "cache_creation_input_tokens": 0
+      },
+      "object": "chat.completion",
+      "id": "msg_bdrk_v5hrqsowadd6bjs74husgma3th7ysshc6p53jtx26nzsqovj34uq",
+      "created": 1792997211
+    },
+    "selected_tool": "generate_evidence_brief",
+    "pass": true,
+    "latency_seconds": 1.003
+  },
+  {
+    "question": "Package source records and limitations for worksheet 169 in disaster 4734, applicant 123-0BE2A-00, for human cost-share review.",
+    "expected_tool": "generate_evidence_brief",
+    "response": {
+      "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "choices": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "toolu_bdrk_01BPozp4KFGvgUK8cWRuqszn",
+                "type": "function",
+                "function": {
+                  "name": "generate_evidence_brief",
+                  "arguments": "{\"pw_number\":169,\"disaster_number\":4734,\"applicant_id\":\"123-0BE2A-00\",\"indicator\":\"cost_share_anomaly\"}"
+                }
+              }
+            ]
+          },
+          "index": 0,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "cache_read_input_tokens": 0,
+        "completion_tokens": 127,
+        "prompt_tokens": 2218,
+        "total_tokens": 2345,
+        "cache_creation_input_tokens": 0
+      },
+      "object": "chat.completion",
+      "id": "msg_bdrk_ff3apnkr6ep6tntdur6chyvhrt3ixhok3be7dpot4joukqb75kra",
+      "created": 1792997212
+    },
+    "selected_tool": "generate_evidence_brief",
+    "pass": true,
+    "latency_seconds": 1.023
+  },
+  {
+    "question": "Generate an analyst evidence brief, not a finding, for FL worksheet 169, disaster 4734, applicant 123-0BE2A-00, using cost_share_anomaly.",
+    "expected_tool": "generate_evidence_brief",
+    "response": {
+      "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "choices": [
+        {
+          "message": {
+            "role": "assistant",
+            "content": null,
+            "tool_calls": [
+              {
+                "id": "toolu_bdrk_01M51dsaZBx6FXJK4zYtiitX",
+                "type": "function",
+                "function": {
+                  "name": "generate_evidence_brief",
+                  "arguments": "{\"pw_number\":169,\"indicator\":\"cost_share_anomaly\",\"disaster_number\":4734,\"applicant_id\":\"123-0BE2A-00\"}"
+                }
+              }
+            ]
+          },
+          "index": 0,
+          "finish_reason": "tool_calls"
+        }
+      ],
+      "usage": {
+        "cache_read_input_tokens": 0,
+        "completion_tokens": 127,
+        "prompt_tokens": 2224,
+        "total_tokens": 2351,
+        "cache_creation_input_tokens": 0
+      },
+      "object": "chat.completion",
+      "id": "msg_bdrk_ttpfm7w2fzh74wvdwdtcyevatodwvlpfrri7acmi5wjkzu7qoavq",
+      "created": 1792997213
+    },
+    "selected_tool": "generate_evidence_brief",
+    "pass": true,
+    "latency_seconds": 1.085
+  }
+]

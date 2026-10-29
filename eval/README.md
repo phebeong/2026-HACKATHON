@@ -1,45 +1,13 @@
-# Evaluations (stub)
+# Evaluation Evidence
 
-This template does **not** include an evaluation harness — but building one is
-the single best way to know whether your MCP server actually works well.
+Read [evaluation_documentation.md](evaluation_documentation.md) first. The measured reference is `results/20261026T064618Z/`: 52 passing tests, three exact detection/control sets, 15/15 expected first-tool names, and three completed workflows.
 
-## Why evaluate?
+Completion does not establish answer correctness. [Narrative-quality review](NARRATIVE_QUALITY_REVIEW.md) records observed unsupported citations, a threshold error and imprecise framing.
 
-The quality of an MCP server is **not** how many tools it has — it's how well an
-LLM with no other context can use those tools (their names, schemas, docstrings,
-and return shapes) to answer realistic, difficult questions. An eval harness
-measures exactly that and shows you *where* to fix things (tool schema, docstring,
-or system prompt).
+## Reproduce
 
-## How to build one
+Run Databricks notebook `eval/databricks/HACKATHON_VALIDATION`, saved job `67919837469456`. The actual harness is `run_hackathon.py`. It archives inputs and results and logs MLflow artifacts when available.
 
-Use the **`mcp-eval` skill** (available to the coding agent in this repo under
-`.agents/skills/mcp-eval/`). It walks you through a reusable
-[Arize Phoenix](https://docs.arize.com/phoenix) harness that:
+The older `eval/databricks/agent_eval_offline.py` is an alternative template requiring generated agent files and additional setup. It is not the harness used for the submitted results. Its example placeholders and sample outcomes are not project evidence.
 
-1. Launches your MCP server over stdio and connects a LangChain agent to it.
-2. Feeds the agent a dataset of natural-language questions with known answers.
-3. Scores each answer with LLM-as-judge evaluators and logs traces to Phoenix.
-
-The companion **`mcp-builder` skill** (`.agents/skills/mcp-builder/`) covers
-Phase 4 — writing the 10 gold questions (`evaluation.xml`) that become the
-harness's dataset.
-
-## Expected layout once built
-
-The `mcp-eval` skill produces an `eval/phoenix/` module roughly like:
-
-```
-eval/phoenix/
-├── agent.py            # <Server>Agent — launches your server over stdio
-├── create_dataset.py   # CLI: upload a CSV dataset to Phoenix
-├── run_experiment.py   # CLI: run agent + judges against a dataset
-├── datasets.yaml       # Dataset registry
-├── judges/             # LLM-as-judge evaluators (correctness, scope)
-├── prompts/            # Versioned agent system prompts
-└── datasets/<name>/    # evaluation.xml (source) + examples/<name>.csv
-```
-
-Add the eval-only dependencies to the `dev` dependency group in
-`pyproject.toml` when you scaffold it (the skill lists the exact versions), then
-`uv sync --group dev`.
+`eval_test_matrix.md` maps the actual test cases and result files. Historical results remain separate. Do not merge predecessor numbers or targets into the current measured metrics.

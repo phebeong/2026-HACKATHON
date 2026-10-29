@@ -1,0 +1,106 @@
+{
+  "summary": {
+    "name": "category_sqlite_control",
+    "pass": true,
+    "snapshot_rows": 179,
+    "tool_count": 3,
+    "control_count": 3,
+    "record_cap": 10000,
+    "possibly_truncated": false
+  },
+  "actual": [
+    [
+      4673,
+      "000-U03E9-00",
+      4902
+    ],
+    [
+      4673,
+      "015-99015-00",
+      5476
+    ],
+    [
+      4673,
+      "027-99027-00",
+      1921
+    ]
+  ],
+  "expected": [
+    [
+      4673,
+      "000-U03E9-00",
+      4902
+    ],
+    [
+      4673,
+      "015-99015-00",
+      5476
+    ],
+    [
+      4673,
+      "027-99027-00",
+      1921
+    ]
+  ],
+  "tool_response": {
+    "total": 3,
+    "count": 3,
+    "offset": 0,
+    "items": [
+      {
+        "pw_number": 4902,
+        "applicant_id": "000-U03E9-00",
+        "state": "FL",
+        "disaster_number": 4673,
+        "damage_category_description": "Roads and Bridges",
+        "project_amount": 2993778.0,
+        "category_mean": 118985.63,
+        "sigma_above_mean": 9.71
+      },
+      {
+        "pw_number": 1921,
+        "applicant_id": "027-99027-00",
+        "state": "FL",
+        "disaster_number": 4673,
+        "damage_category_description": "Roads and Bridges",
+        "project_amount": 1682506.67,
+        "category_mean": 118985.63,
+        "sigma_above_mean": 5.28
+      },
+      {
+        "pw_number": 5476,
+        "applicant_id": "015-99015-00",
+        "state": "FL",
+        "disaster_number": 4673,
+        "damage_category_description": "Roads and Bridges",
+        "project_amount": 1548151.92,
+        "category_mean": 118985.63,
+        "sigma_above_mean": 4.82
+      }
+    ],
+    "has_more": false,
+    "next_offset": null,
+    "data_scope": {
+      "records_retrieved": 179,
+      "record_cap": 10000,
+      "possibly_truncated": false,
+      "disaster_filter": 4673,
+      "baseline": "retrieved projects in selected category and filters"
+    },
+    "category_stats": {
+      "mean": 118985.63,
+      "stddev": 296208.96,
+      "n": 179
+    },
+    "caveat": "Review indicator on public aggregate data. Not a finding; does not allege fraud, waste, or abuse. A human analyst makes the determination.",
+    "_provenance": {
+      "source": "FEMA OpenFEMA Public Assistance Funded Projects Details (v2)",
+      "last_updated": "Source update timestamp not retrieved",
+      "update_frequency": "daily (R/P1D)",
+      "retrieved_at": "2026-10-26T06:46:32.074853+00:00",
+      "methodology": "sigma = (projectAmount - category_mean) / category_stddev within category C; flagged sigma >= 3.0.",
+      "limitations": "Figures are from FEMA's Grants Manager, not FEMA's official financial system, and may differ from USAspending.gov. Not for official reporting. Detection tools analyze at most 5,000 cost-share records or 10,000 repeated-worksheet/category records per call. Results and baselines describe the retrieved subset, not the full dataset. Cost-share bands do not verify declaration-specific authorizations; authorized 100% shares may be returned.",
+      "review_status": "Review indicator on public aggregate data. Not a finding."
+    }
+  }
+}

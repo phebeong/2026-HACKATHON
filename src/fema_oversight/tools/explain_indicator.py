@@ -1,4 +1,4 @@
-"""Tool: explain_risk_indicator — the methodology behind an indicator (explainability)."""
+"Tool: explain_risk_indicator — the methodology behind an indicator (explainability)."
 
 from __future__ import annotations
 
@@ -23,7 +23,10 @@ def register(mcp: FastMCP) -> None:
     async def explain_risk_indicator(
         indicator: Annotated[
             IndicatorType,
-            "Which indicator to explain: cost_share_anomaly, repeated_worksheet, or category_outlier.",
+            (
+                "Which indicator to explain: cost_share_anomaly, "
+                "repeated_worksheet, or category_outlier."
+            ),
         ],
     ) -> dict[str, Any]:
         """Return the methodology, calculation, thresholds, and limitations behind
@@ -32,6 +35,10 @@ def register(mcp: FastMCP) -> None:
         """
         card = INDICATOR_METHODOLOGY.get(indicator.value)
         if not card:
-            return {"error": f"Unknown indicator '{indicator}'.",
-                    "hint": "Use cost_share_anomaly, repeated_worksheet, or category_outlier."}
+            return {
+                "error": f"Unknown indicator '{indicator}'.",
+                "hint": (
+                    "Use cost_share_anomaly, repeated_worksheet, or category_outlier."
+                ),
+            }
         return dict(card)

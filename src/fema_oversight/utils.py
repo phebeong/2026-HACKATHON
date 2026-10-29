@@ -9,6 +9,8 @@ OData query params; never a caller-supplied URL.
 from __future__ import annotations
 
 import json
+import math
+from datetime import datetime, timezone
 from typing import Any
 from urllib.parse import unquote, urlsplit
 
@@ -89,7 +91,9 @@ async def fetch_json(
                 async for chunk in response.aiter_bytes():
                     content.extend(chunk)
                     if len(content) > MAX_RESPONSE_BYTES:
-                        raise UpstreamServiceError("Upstream response exceeded the size limit.")
+                        raise UpstreamServiceError(
+                            "Upstream response exceeded the size limit."
+                        )
                 return json.loads(content)
     except UpstreamServiceError:
         raise
@@ -122,9 +126,12 @@ async def fetch_pa_records(
     if orderby:
         params["$orderby"] = orderby
     payload = await fetch_json(PA_PATH, params=params)
-    if isinstance(payload, dict):
-        return payload.get(PA_ENTITY, [])
-    return []
+    if not isinstance(payload, dict) or PA_ENTITY not in payload:
+        raise UpstreamServiceError("Upstream response omitted the dataset records.")
+    records = payload[PA_ENTITY]
+    if not isinstance(records, list) or any(not isinstance(r, dict) for r in records):
+        raise UpstreamServiceError("Upstream response has an invalid record structure.")
+    return records
 
 
 def to_float(value: Any) -> float | None:
@@ -132,7 +139,8 @@ def to_float(value: Any) -> float | None:
     if value is None or value == "":
         return None
     try:
-        return float(value)
+        number = float(value)
+        return number if math.isfinite(number) else None
     except (TypeError, ValueError):
         return None
 
@@ -141,12 +149,19 @@ def provenance_block(methodology: str, as_of: str | None = None) -> dict[str, st
     """The five-field provenance stamp carried on every output."""
     return {
         "source": DATASET_PROVENANCE["source"],
-        "last_updated": as_of or DATASET_PROVENANCE["update_frequency"],
+        "last_updated": as_of or "Source update timestamp not retrieved",
+        "update_frequency": DATASET_PROVENANCE["update_frequency"],
+        "retrieved_at": datetime.now(timezone.utc).isoformat(),
         "methodology": methodology,
-        "limitations": DATASET_PROVENANCE["financial_caveat"],
-        "review_status": (
-            "Review indicator on public aggregate data. Not a finding."
+        "limitations": (
+            DATASET_PROVENANCE["financial_caveat"]
+            + " Detection tools analyze at most 5,000 cost-share records or "
+            "10,000 repeated-worksheet/category records per call. Results and "
+            "baselines describe the retrieved subset, not the full dataset. "
+            "Cost-share bands do not verify declaration-specific authorizations; "
+            "authorized 100% shares may be returned."
         ),
+        "review_status": ("Review indicator on public aggregate data. Not a finding."),
     }
 
 
